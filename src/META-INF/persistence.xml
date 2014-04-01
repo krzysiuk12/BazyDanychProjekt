@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="northwind">
+        <class>pl.edu.agh.domain.Categories</class>
+        <class>pl.edu.agh.domain.Customercustomerdemo</class>
+        <class>pl.edu.agh.domain.Customerdemographics</class>
+        <class>pl.edu.agh.domain.Customers</class>
+        <class>pl.edu.agh.domain.Employees</class>
+        <class>pl.edu.agh.domain.Employeeterritories</class>
+        <class>pl.edu.agh.domain.Orderdetails</class>
+        <class>pl.edu.agh.domain.Orders</class>
+        <class>pl.edu.agh.domain.Products</class>
+        <class>pl.edu.agh.domain.Region</class>
+        <class>pl.edu.agh.domain.Shippers</class>
+        <class>pl.edu.agh.domain.Suppliers</class>
+        <class>pl.edu.agh.domain.Territories</class>
+        <properties>
+            <!--<property name="toplink.jdbc.url" value="jdbc:postgresql://localhost:5432/northwind"/>-->
+            <!--<property name="toplink.jdbc.driver" value="org.postgresql.Driver"/>-->
+            <!--<property name="toplink.jdbc.user" value="postgres"/>-->
+            <!--<property name="toplink.jdbc.password" value="postgres"/>-->
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/northwind"/>
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <property name="hibernate.connection.username" value="postgres"/>
+            <property name="hibernate.connection.password" value="postgres"/>
+            <!--<property name="openjpa.ConnectionURL" value="jdbc:postgresql://localhost:5432/northwind"/>-->
+            <!--<property name="openjpa.ConnectionDriverName" value="org.postgresql.Driver"/>-->
+            <!--<property name="openjpa.ConnectionUserName" value="postgres"/>-->
+            <!--<property name="openjpa.ConnectionPassword" value="postgres"/>-->
+            <!--<property name="eclipselink.jdbc.url" value="jdbc:postgresql://localhost:5432/northwind"/>-->
+            <!--<property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>-->
+            <!--<property name="eclipselink.jdbc.user" value="postgres"/>-->
+            <!--<property name="eclipselink.jdbc.password" value="postgres"/>-->
+        </properties>
+    </persistence-unit>
+</persistence>
