@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/northwind</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">postgres</property>
+        <!--<mapping class="pl.edu.agh.domain.Customercustomerdemo"/>-->
+        <!--<mapping class="pl.edu.agh.domain.Customerdemographics"/>-->
+        <!--<mapping class="pl.edu.agh.domain.Customers"/>-->
+        <!--<mapping class="pl.edu.agh.domain.Employees"/>-->
+        <!--<mapping class="pl.edu.agh.domain.Employeeterritories"/>-->
+        <!--<mapping class="pl.edu.agh.domain.Orderdetails"/>-->
+        <!--<mapping class="pl.edu.agh.domain.Orders"/>-->
+        <!--<mapping class="pl.edu.agh.domain.Products"/>-->
+        <!--<mapping class="pl.edu.agh.domain.Region"/>-->
+        <mapping class="pl.edu.agh.domain.Shippers"/>
+        <!--<mapping class="pl.edu.agh.domain.Suppliers"/>-->
+        <!--<mapping class="pl.edu.agh.domain.Territories"/>-->
+        <!--<mapping class="pl.edu.agh.domain.Categories"/>-->
+    </session-factory>
+</hibernate-configuration>

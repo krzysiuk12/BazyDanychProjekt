@@ -11,7 +11,7 @@ public class Shippers {
     private int shipperid;
     private String companyname;
     private String phone;
-    private Collection<Orders> ordersesByShipperid;
+//    private Collection<Orders> ordersesByShipperid;
 
     @Id
     @Column(name = "shipperid")
@@ -66,12 +66,22 @@ public class Shippers {
         return result;
     }
 
-    @OneToMany(mappedBy = "shippersByShipvia")
-    public Collection<Orders> getOrdersesByShipperid() {
-        return ordersesByShipperid;
-    }
+//    @OneToMany(mappedBy = "shippersByShipvia")
+//    public Collection<Orders> getOrdersesByShipperid() {
+//        return ordersesByShipperid;
+//    }
+//
+//    public void setOrdersesByShipperid(Collection<Orders> ordersesByShipperid) {
+//        this.ordersesByShipperid = ordersesByShipperid;
+//    }
+//
 
-    public void setOrdersesByShipperid(Collection<Orders> ordersesByShipperid) {
-        this.ordersesByShipperid = ordersesByShipperid;
+    @Override
+    public String toString() {
+        return "Shippers{" +
+                "shipperid=" + shipperid +
+                ", companyname='" + companyname + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
     }
 }

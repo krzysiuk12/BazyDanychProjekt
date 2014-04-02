@@ -87,4 +87,13 @@ public class Categories {
     public void setProductsesByCategoryid(Collection<Products> productsesByCategoryid) {
         this.productsesByCategoryid = productsesByCategoryid;
     }
+
+    @Override
+    public String toString() {
+        return "Categories{" +
+                "description='" + description + '\'' +
+                ", categoryname='" + categoryname + '\'' +
+                ", categoryid=" + categoryid +
+                '}';
+    }
 }
