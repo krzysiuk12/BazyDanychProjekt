@@ -13,7 +13,7 @@ public class Order {
 
     private Long id;
 
-    private Set<OrderDetails> orderDetails;
+    private Set<OrderDetail> orderDetails;
     private Customer customer;
     private Employee employee;
     private Shipper shipViaShipper;
@@ -40,10 +40,10 @@ public class Order {
     }
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "order", fetch = FetchType.LAZY)
-    public Set<OrderDetails> getOrderDetails() {
+    public Set<OrderDetail> getOrderDetails() {
         return orderDetails;
     }
-    public void setOrderDetails(Set<OrderDetails> orderDetails) {
+    public void setOrderDetails(Set<OrderDetail> orderDetails) {
         this.orderDetails = orderDetails;
     }
 

@@ -14,7 +14,7 @@
         <mapping class="pl.edu.agh.domain.Employee"/>
         <mapping class="pl.edu.agh.domain.Shipper"/>
         <mapping class="pl.edu.agh.domain.Order"/>
-        <mapping class="pl.edu.agh.domain.OrderDetails"/>
+        <mapping class="pl.edu.agh.domain.OrderDetail"/>
         <mapping class="pl.edu.agh.domain.Region"/>
         <mapping class="pl.edu.agh.domain.Territory"/>
         <mapping class="pl.edu.agh.domain.EmployeeTerritory"/>
