@@ -6,18 +6,19 @@
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">postgres</property>
-        <!--<mapping class="pl.edu.agh.domain.Customercustomerdemo"/>-->
-        <!--<mapping class="pl.edu.agh.domain.Customerdemographics"/>-->
-        <!--<mapping class="pl.edu.agh.domain.Customers"/>-->
-        <!--<mapping class="pl.edu.agh.domain.Employees"/>-->
-        <!--<mapping class="pl.edu.agh.domain.Employeeterritories"/>-->
-        <!--<mapping class="pl.edu.agh.domain.Orderdetails"/>-->
-        <!--<mapping class="pl.edu.agh.domain.Orders"/>-->
-        <!--<mapping class="pl.edu.agh.domain.Products"/>-->
-        <!--<mapping class="pl.edu.agh.domain.Region"/>-->
-        <mapping class="pl.edu.agh.domain.Shippers"/>
-        <!--<mapping class="pl.edu.agh.domain.Suppliers"/>-->
-        <!--<mapping class="pl.edu.agh.domain.Territories"/>-->
-        <!--<mapping class="pl.edu.agh.domain.Categories"/>-->
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+        <mapping class="pl.edu.agh.domain.Supplier"/>
+        <mapping class="pl.edu.agh.domain.Category"/>
+        <mapping class="pl.edu.agh.domain.Product"/>
+        <mapping class="pl.edu.agh.domain.Customer"/>
+        <mapping class="pl.edu.agh.domain.Employee"/>
+        <mapping class="pl.edu.agh.domain.Shipper"/>
+        <mapping class="pl.edu.agh.domain.Order"/>
+        <mapping class="pl.edu.agh.domain.OrderDetails"/>
+        <mapping class="pl.edu.agh.domain.Region"/>
+        <mapping class="pl.edu.agh.domain.Territory"/>
+        <mapping class="pl.edu.agh.domain.EmployeeTerritory"/>
+        <mapping class="pl.edu.agh.domain.CustomerDemographic"/>
+        <mapping class="pl.edu.agh.domain.CustomerTypeMapping"/>
     </session-factory>
 </hibernate-configuration>

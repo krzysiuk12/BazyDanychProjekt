@@ -1,64 +1,43 @@
 package pl.edu.agh.domain;
 
 import javax.persistence.*;
-import java.util.Collection;
+import java.util.Set;
 
 /**
- * Created by Krzysiu on 2014-04-02.
+ * Created by Krzysiu on 2014-04-15.
  */
 @Entity
+@Table(name = "Region")
 public class Region {
-    private int regionid;
-    private String regiondescription;
-    private Collection<Territories> territoriesesByRegionid;
+
+    private Long id;
+    private String description;
+    private Set<Territory> territories;
 
     @Id
-    @Column(name = "regionid")
-    public int getRegionid() {
-        return regionid;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Region_PK_Sequence")
+    @SequenceGenerator(name = "Region_PK_Sequence", sequenceName = "Region_PK_Sequence")
+    public Long getId() {
+        return id;
     }
-
-    public void setRegionid(int regionid) {
-        this.regionid = regionid;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Basic
-    @Column(name = "regiondescription")
-    public String getRegiondescription() {
-        return regiondescription;
+    @Column(name = "regionDescription")
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setRegiondescription(String regiondescription) {
-        this.regiondescription = regiondescription;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "region", fetch = FetchType.LAZY)
+    public Set<Territory> getTerritories() {
+        return territories;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Region region = (Region) o;
-
-        if (regionid != region.regionid) return false;
-        if (regiondescription != null ? !regiondescription.equals(region.regiondescription) : region.regiondescription != null)
-            return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = regionid;
-        result = 31 * result + (regiondescription != null ? regiondescription.hashCode() : 0);
-        return result;
-    }
-
-    @OneToMany(mappedBy = "regionByRegionid")
-    public Collection<Territories> getTerritoriesesByRegionid() {
-        return territoriesesByRegionid;
-    }
-
-    public void setTerritoriesesByRegionid(Collection<Territories> territoriesesByRegionid) {
-        this.territoriesesByRegionid = territoriesesByRegionid;
+    public void setTerritories(Set<Territory> territories) {
+        this.territories = territories;
     }
 }

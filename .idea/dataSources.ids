@@ -7,157 +7,80 @@
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
     <schema name="public" catalog="northwind"/>
     <table name="categories" schema="public" catalog="northwind" type="TABLE">
-      <column name="categoryid" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="categoryname" sqlType="varchar" precision="15" scale="0" nullable="false" jdbcType="12"/>
-      <column name="description" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="picture" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
-      <primary-key name="categories_pkey" columns="categoryid"/>
-      <exported-key name="products_categoryid_fkey" table="products" schema="public" catalog="northwind" columns="categoryid"/>
+      <column name="id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="categoryname" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="picture" sqlType="oid" precision="10" scale="0" nullable="true" jdbcType="-5"/>
+      <primary-key name="categories_pkey" columns="id"/>
+      <exported-key name="fk_6qxl3puta3617xl7nqdjfw9xr" table="products" schema="public" catalog="northwind" columns="categoryid"/>
+      <index name="uk_c36bcfbt3en8tywn47cyy0d7t" unique="true" columns="categoryname"/>
     </table>
-    <table name="customercustomerdemo" schema="public" catalog="northwind" type="TABLE">
-      <column name="customerid" sqlType="bpchar" precision="2147483647" scale="0" nullable="false" jdbcType="1"/>
-      <column name="customertypeid" sqlType="bpchar" precision="2147483647" scale="0" nullable="false" jdbcType="1"/>
-      <primary-key name="customercustomerdemo_pkey" columns="customerid,customertypeid"/>
-      <foreign-key name="customercustomerdemo_customertypeid_fkey" columns="customertypeid" ref-table="customerdemographics" ref-schema="public" ref-catalog="" ref-columns="customertypeid" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="customercustomerdemo_customerid_fkey" columns="customerid" ref-table="customers" ref-schema="public" ref-catalog="" ref-columns="customerid" update-rule="3" delete-rule="3" deferrability="2"/>
+    <table name="category_pk_sequence" schema="public" catalog="northwind" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
-    <table name="customerdemographics" schema="public" catalog="northwind" type="TABLE">
-      <column name="customertypeid" sqlType="bpchar" precision="2147483647" scale="0" nullable="false" jdbcType="1"/>
-      <column name="customerdesc" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="customerdemographics_pkey" columns="customertypeid"/>
-      <exported-key name="customercustomerdemo_customertypeid_fkey" table="customercustomerdemo" schema="public" catalog="northwind" columns="customertypeid"/>
-    </table>
-    <table name="customers" schema="public" catalog="northwind" type="TABLE">
-      <column name="customerid" sqlType="bpchar" precision="2147483647" scale="0" nullable="false" jdbcType="1"/>
-      <column name="companyname" sqlType="varchar" precision="40" scale="0" nullable="false" jdbcType="12"/>
-      <column name="contactname" sqlType="varchar" precision="30" scale="0" nullable="true" jdbcType="12"/>
-      <column name="contacttitle" sqlType="varchar" precision="30" scale="0" nullable="true" jdbcType="12"/>
-      <column name="address" sqlType="varchar" precision="60" scale="0" nullable="true" jdbcType="12"/>
-      <column name="city" sqlType="varchar" precision="15" scale="0" nullable="true" jdbcType="12"/>
-      <column name="region" sqlType="varchar" precision="15" scale="0" nullable="true" jdbcType="12"/>
-      <column name="postalcode" sqlType="varchar" precision="10" scale="0" nullable="true" jdbcType="12"/>
-      <column name="country" sqlType="varchar" precision="15" scale="0" nullable="true" jdbcType="12"/>
-      <column name="phone" sqlType="varchar" precision="24" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fax" sqlType="varchar" precision="24" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="customers_pkey" columns="customerid"/>
-      <exported-key name="customercustomerdemo_customerid_fkey" table="customercustomerdemo" schema="public" catalog="northwind" columns="customerid"/>
-      <exported-key name="orders_customerid_fkey" table="orders" schema="public" catalog="northwind" columns="customerid"/>
-    </table>
-    <table name="employees" schema="public" catalog="northwind" type="TABLE">
-      <column name="employeeid" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="lastname" sqlType="varchar" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <column name="firstname" sqlType="varchar" precision="10" scale="0" nullable="false" jdbcType="12"/>
-      <column name="title" sqlType="varchar" precision="30" scale="0" nullable="true" jdbcType="12"/>
-      <column name="titleofcourtesy" sqlType="varchar" precision="25" scale="0" nullable="true" jdbcType="12"/>
-      <column name="birthdate" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="hiredate" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="address" sqlType="varchar" precision="60" scale="0" nullable="true" jdbcType="12"/>
-      <column name="city" sqlType="varchar" precision="15" scale="0" nullable="true" jdbcType="12"/>
-      <column name="region" sqlType="varchar" precision="15" scale="0" nullable="true" jdbcType="12"/>
-      <column name="postalcode" sqlType="varchar" precision="10" scale="0" nullable="true" jdbcType="12"/>
-      <column name="country" sqlType="varchar" precision="15" scale="0" nullable="true" jdbcType="12"/>
-      <column name="homephone" sqlType="varchar" precision="24" scale="0" nullable="true" jdbcType="12"/>
-      <column name="extension" sqlType="varchar" precision="4" scale="0" nullable="true" jdbcType="12"/>
-      <column name="photo" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
-      <column name="notes" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="reportsto" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="photopath" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="employees_pkey" columns="employeeid"/>
-      <foreign-key name="employees_reportsto_fkey" columns="reportsto" ref-table="employees" ref-schema="public" ref-catalog="" ref-columns="employeeid" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="employees_reportsto_fkey" table="employees" schema="public" catalog="northwind" columns="reportsto"/>
-      <exported-key name="employeeterritories_employeeid_fkey" table="employeeterritories" schema="public" catalog="northwind" columns="employeeid"/>
-      <exported-key name="orders_employeeid_fkey" table="orders" schema="public" catalog="northwind" columns="employeeid"/>
-    </table>
-    <table name="employeeterritories" schema="public" catalog="northwind" type="TABLE">
-      <column name="employeeid" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="territoryid" sqlType="varchar" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="employeeterritories_pkey" columns="employeeid,territoryid"/>
-      <foreign-key name="employeeterritories_employeeid_fkey" columns="employeeid" ref-table="employees" ref-schema="public" ref-catalog="" ref-columns="employeeid" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="employeeterritories_territoryid_fkey" columns="territoryid" ref-table="territories" ref-schema="public" ref-catalog="" ref-columns="territoryid" update-rule="3" delete-rule="3" deferrability="2"/>
-    </table>
-    <table name="orderdetails" schema="public" catalog="northwind" type="TABLE">
-      <column name="orderid" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="productid" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="unitprice" sqlType="float4" precision="8" scale="8" nullable="false" jdbcType="7"/>
-      <column name="quantity" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="discount" sqlType="float4" precision="8" scale="8" nullable="false" jdbcType="7"/>
-      <primary-key name="orderdetails_pkey" columns="orderid,productid"/>
-      <foreign-key name="orderdetails_orderid_fkey" columns="orderid" ref-table="orders" ref-schema="public" ref-catalog="" ref-columns="orderid" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="orderdetails_productid_fkey" columns="productid" ref-table="products" ref-schema="public" ref-catalog="" ref-columns="productid" update-rule="3" delete-rule="3" deferrability="2"/>
-    </table>
-    <table name="orders" schema="public" catalog="northwind" type="TABLE">
-      <column name="orderid" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="customerid" sqlType="bpchar" precision="2147483647" scale="0" nullable="true" jdbcType="1"/>
-      <column name="employeeid" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="orderdate" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="requireddate" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="shippeddate" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="shipvia" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="freight" sqlType="float4" precision="8" scale="8" nullable="true" jdbcType="7"/>
-      <column name="shipname" sqlType="varchar" precision="40" scale="0" nullable="true" jdbcType="12"/>
-      <column name="shipaddress" sqlType="varchar" precision="60" scale="0" nullable="true" jdbcType="12"/>
-      <column name="shipcity" sqlType="varchar" precision="15" scale="0" nullable="true" jdbcType="12"/>
-      <column name="shipregion" sqlType="varchar" precision="15" scale="0" nullable="true" jdbcType="12"/>
-      <column name="shippostalcode" sqlType="varchar" precision="10" scale="0" nullable="true" jdbcType="12"/>
-      <column name="shipcountry" sqlType="varchar" precision="15" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="orders_pkey" columns="orderid"/>
-      <foreign-key name="orders_customerid_fkey" columns="customerid" ref-table="customers" ref-schema="public" ref-catalog="" ref-columns="customerid" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="orders_employeeid_fkey" columns="employeeid" ref-table="employees" ref-schema="public" ref-catalog="" ref-columns="employeeid" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="orders_shipvia_fkey" columns="shipvia" ref-table="shippers" ref-schema="public" ref-catalog="" ref-columns="shipperid" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="orderdetails_orderid_fkey" table="orderdetails" schema="public" catalog="northwind" columns="orderid"/>
+    <table name="product_pk_sequence" schema="public" catalog="northwind" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
     <table name="products" schema="public" catalog="northwind" type="TABLE">
-      <column name="productid" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="productname" sqlType="varchar" precision="40" scale="0" nullable="false" jdbcType="12"/>
-      <column name="supplierid" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="categoryid" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="quantityperunit" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="discontinued" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="productname" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="quantityperunit" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="reorderlevel" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="unitprice" sqlType="float4" precision="8" scale="8" nullable="true" jdbcType="7"/>
       <column name="unitsinstock" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="unitsonorder" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="reorderlevel" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="discontinued" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <primary-key name="products_pkey" columns="productid"/>
-      <foreign-key name="products_categoryid_fkey" columns="categoryid" ref-table="categories" ref-schema="public" ref-catalog="" ref-columns="categoryid" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="products_supplierid_fkey" columns="supplierid" ref-table="suppliers" ref-schema="public" ref-catalog="" ref-columns="supplierid" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="orderdetails_productid_fkey" table="orderdetails" schema="public" catalog="northwind" columns="productid"/>
+      <column name="categoryid" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="supplierid" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="products_pkey" columns="id"/>
+      <foreign-key name="fk_6qxl3puta3617xl7nqdjfw9xr" columns="categoryid" ref-table="categories" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_tahab33vh2tcvmkquw44u4ysr" columns="supplierid" ref-table="suppliers" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
-    <table name="region" schema="public" catalog="northwind" type="TABLE">
-      <column name="regionid" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="regiondescription" sqlType="bpchar" precision="2147483647" scale="0" nullable="false" jdbcType="1"/>
-      <primary-key name="region_pkey" columns="regionid"/>
-      <exported-key name="territories_regionid_fkey" table="territories" schema="public" catalog="northwind" columns="regionid"/>
-    </table>
-    <table name="shippers" schema="public" catalog="northwind" type="TABLE">
-      <column name="shipperid" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="companyname" sqlType="varchar" precision="40" scale="0" nullable="false" jdbcType="12"/>
-      <column name="phone" sqlType="varchar" precision="24" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="shippers_pkey" columns="shipperid"/>
-      <exported-key name="orders_shipvia_fkey" table="orders" schema="public" catalog="northwind" columns="shipvia"/>
+    <table name="supplier_pk_sequence" schema="public" catalog="northwind" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
     <table name="suppliers" schema="public" catalog="northwind" type="TABLE">
-      <column name="supplierid" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="companyname" sqlType="varchar" precision="40" scale="0" nullable="false" jdbcType="12"/>
-      <column name="contactname" sqlType="varchar" precision="30" scale="0" nullable="true" jdbcType="12"/>
-      <column name="contacttitle" sqlType="varchar" precision="30" scale="0" nullable="true" jdbcType="12"/>
-      <column name="address" sqlType="varchar" precision="60" scale="0" nullable="true" jdbcType="12"/>
-      <column name="city" sqlType="varchar" precision="15" scale="0" nullable="true" jdbcType="12"/>
-      <column name="region" sqlType="varchar" precision="15" scale="0" nullable="true" jdbcType="12"/>
-      <column name="postalcode" sqlType="varchar" precision="10" scale="0" nullable="true" jdbcType="12"/>
-      <column name="country" sqlType="varchar" precision="15" scale="0" nullable="true" jdbcType="12"/>
-      <column name="phone" sqlType="varchar" precision="24" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fax" sqlType="varchar" precision="24" scale="0" nullable="true" jdbcType="12"/>
-      <column name="homepage" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="suppliers_pkey" columns="supplierid"/>
-      <exported-key name="products_supplierid_fkey" table="products" schema="public" catalog="northwind" columns="supplierid"/>
-    </table>
-    <table name="territories" schema="public" catalog="northwind" type="TABLE">
-      <column name="territoryid" sqlType="varchar" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <column name="territorydescription" sqlType="bpchar" precision="2147483647" scale="0" nullable="false" jdbcType="1"/>
-      <column name="regionid" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <primary-key name="territories_pkey" columns="territoryid"/>
-      <foreign-key name="territories_regionid_fkey" columns="regionid" ref-table="region" ref-schema="public" ref-catalog="" ref-columns="regionid" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="employeeterritories_territoryid_fkey" table="employeeterritories" schema="public" catalog="northwind" columns="territoryid"/>
+      <column name="id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="address" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="city" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="companyname" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="contactname" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="contacttitle" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="country" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fax" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="homepage" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="phone" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="postalcode" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="region" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="suppliers_pkey" columns="id"/>
+      <exported-key name="fk_tahab33vh2tcvmkquw44u4ysr" table="products" schema="public" catalog="northwind" columns="supplierid"/>
     </table>
   </data-source>
 </component>
