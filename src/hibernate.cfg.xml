@@ -7,7 +7,7 @@
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">postgres</property>
         <property name="hibernate.hbm2ddl.auto">create-drop</property>
-        <mapping class="pl.edu.agh.domain.Supplier"/>
+<!--        <mapping class="pl.edu.agh.domain.Supplier"/>
         <mapping class="pl.edu.agh.domain.Category"/>
         <mapping class="pl.edu.agh.domain.Product"/>
         <mapping class="pl.edu.agh.domain.Customer"/>
@@ -19,6 +19,6 @@
         <mapping class="pl.edu.agh.domain.Territory"/>
         <mapping class="pl.edu.agh.domain.EmployeeTerritory"/>
         <mapping class="pl.edu.agh.domain.CustomerDemographic"/>
-        <mapping class="pl.edu.agh.domain.CustomerTypeMapping"/>
+        <mapping class="pl.edu.agh.domain.CustomerTypeMapping"/>-->
     </session-factory>
 </hibernate-configuration>

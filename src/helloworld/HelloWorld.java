@@ -1,8 +1,7 @@
 package helloworld;
 
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistryBuilder;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Created by Krzysiu on 2014-04-02.
@@ -10,9 +9,10 @@ import org.hibernate.service.ServiceRegistryBuilder;
 public class HelloWorld {
 
     public static void main(String[] args) {
-        Configuration configuration = new Configuration().configure();
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+/*        Configuration configuration = new Configuration().configure();
         ServiceRegistryBuilder srb = new ServiceRegistryBuilder().applySettings(configuration.getProperties());
-        SessionFactory sf = configuration.buildSessionFactory(srb.buildServiceRegistry());
+        SessionFactory sf = configuration.buildSessionFactory(srb.buildServiceRegistry());*/
 /*        Session session = sf.openSession();
         session.getTransaction().begin();
         List<Shippers> shippers = session.createQuery("from Shippers ").list();

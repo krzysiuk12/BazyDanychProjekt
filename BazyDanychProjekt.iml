@@ -8,7 +8,10 @@
     </facet>
     <facet type="hibernate" name="Hibernate">
       <configuration>
-        <datasource-map />
+        <datasource-map>
+          <unit-entry name="&lt;anonymous&gt;spring-config-database.xml@298" />
+          <unit-entry name="&lt;anonymous&gt;spring-config-database.xml@930" />
+        </datasource-map>
         <naming-strategy-map />
       </configuration>
     </facet>
