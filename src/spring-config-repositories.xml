@@ -4,7 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <import resource="spring-config-database.xml"/>
-    <import resource="spring-config-repositories.xml"/>
-    <import resource="spring-config-services.xml"/>
+
+    <bean name="dataGenaratorRepository" class="pl.edu.agh.repository.DataGeneratorRepository">
+        <constructor-arg name="sessionFactory" ref="sessionFactory" />
+    </bean>
 
 </beans>

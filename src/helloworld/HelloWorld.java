@@ -2,6 +2,7 @@ package helloworld;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import pl.edu.agh.services.interfaces.IDataGeneratorService;
 
 /**
  * Created by Krzysiu on 2014-04-02.
@@ -10,6 +11,8 @@ public class HelloWorld {
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+        ((IDataGeneratorService)context.getBean("dataGeneratorService")).generateCategories();
+
 /*        Configuration configuration = new Configuration().configure();
         ServiceRegistryBuilder srb = new ServiceRegistryBuilder().applySettings(configuration.getProperties());
         SessionFactory sf = configuration.buildSessionFactory(srb.buildServiceRegistry());*/
