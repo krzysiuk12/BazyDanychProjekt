@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="pl.edu.agh.tutorial.mappings.associations.bidirectional.onetomany.xml">
+
+    <class name="Customer" table="Customers"
+           dynamic-insert="false" dynamic-update="false" mutable="true" select-before-update="false">
+
+        <id name="id" column="CustomerId" type="long" access="field">
+            <generator class="sequence">
+                <param name="sequence">Bidirectional_OneToMany_Xml_Customer_PK</param>
+            </generator>
+        </id>
+
+        <property name="firstName" column="firstName" type="string" />
+        <property name="lastName" column="lastName" type="string" />
+
+        <set name="orders">
+            <key column="CustomerId" not-null="true" foreign-key="Bidirectional_OneToMany_Xml_FK"/>
+            <one-to-many class="Order" />
+        </set>
+
+    </class>
+
+</hibernate-mapping>

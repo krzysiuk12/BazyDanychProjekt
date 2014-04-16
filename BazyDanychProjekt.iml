@@ -12,6 +12,7 @@
           <unit-entry name="&lt;anonymous&gt;spring-config-database.xml@298" />
           <unit-entry name="&lt;anonymous&gt;spring-config-database.xml@930" />
           <unit-entry name="&lt;anonymous&gt;spring-config-database.xml@939" value="dataSource" />
+          <unit-entry name="&lt;anonymous&gt;spring-config-tutorial-database.xml@952" value="dataSource" />
         </datasource-map>
         <naming-strategy-map />
       </configuration>

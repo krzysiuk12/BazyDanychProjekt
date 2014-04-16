@@ -6,32 +6,27 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-<!--    <context:component-scan base-package="pl.edu.agh.domain"/>-->
+    <!--    <context:component-scan base-package="pl.edu.agh.domain"/>-->
 
     <bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.postgresql.Driver"/>
-        <property name="url" value="jdbc:postgresql://localhost:5432/northwind"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/BazyDanychTutorial"/>
         <property name="username" value="postgres" />
         <property name="password" value="postgres" />
     </bean>
 
     <bean name="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="annotatedClasses">
+<!--        <property name="annotatedClasses">
             <list>
-                <value>pl.edu.agh.domain.Supplier</value>
-                <value>pl.edu.agh.domain.Category</value>
-                <value>pl.edu.agh.domain.Product</value>
-                <value>pl.edu.agh.domain.Customer</value>
-                <value>pl.edu.agh.domain.Employee</value>
-                <value>pl.edu.agh.domain.Shipper</value>
-                <value>pl.edu.agh.domain.Order</value>
-                <value>pl.edu.agh.domain.OrderDetail</value>
-                <value>pl.edu.agh.domain.Region</value>
-                <value>pl.edu.agh.domain.Territory</value>
-                <value>pl.edu.agh.domain.EmployeeTerritory</value>
-                <value>pl.edu.agh.domain.CustomerDemographic</value>
-                <value>pl.edu.agh.domain.CustomerTypeMapping</value>
+                <value>pl.edu.agh.tutorial.mappings.associations.bidirectional.onetomany.annotations.Customer</value>
+                <value>pl.edu.agh.tutorial.mappings.associations.bidirectional.onetomany.annotations.Order</value>
+            </list>
+        </property>-->
+        <property name="mappingResources">
+            <list>
+                <value>pl/edu/agh/tutorial/mappings/associations/bidirectional/onetomany/xml/Customer.hbm.xml</value>
+                <value>pl/edu/agh/tutorial/mappings/associations/bidirectional/onetomany/xml/Order.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
