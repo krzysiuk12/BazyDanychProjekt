@@ -25,7 +25,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Product_PK_Sequence")
-    @SequenceGenerator(name = "Product_PK_Sequence", sequenceName = "Product_PK_Sequence")
+    @SequenceGenerator(name = "Product_PK_Sequence", sequenceName = "Product_PK_Sequence", initialValue = 1, allocationSize = 1)
     public Long getId() {
         return id;
     }
@@ -112,5 +112,19 @@ public class Product {
     }
     public void setDiscontinued(boolean discontinued) {
         this.discontinued = discontinued;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder("Product Informations: ").append("\n");
+        builder.append("\t").append("id = ").append(id).append("\n")
+                .append("\t").append("productName = ").append(productName).append("\n")
+                .append("\t").append("quantityPerUnit = ").append(quantityPerUnit).append("\n")
+                .append("\t").append("unitPrice = ").append(unitPrice).append("\n")
+                .append("\t").append("unitsInStock = ").append(unitsInStock).append("\n")
+                .append("\t").append("unitsOnOrder = ").append(unitsOnOrder).append("\n")
+                .append("\t").append("reorderLevel = ").append(reorderLevel).append("\n")
+                .append("\t").append("discontinued = ").append(discontinued).append("\n");
+        return builder.toString();
     }
 }

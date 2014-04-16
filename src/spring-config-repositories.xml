@@ -9,4 +9,8 @@
         <constructor-arg name="sessionFactory" ref="sessionFactory" />
     </bean>
 
+    <bean name="warehouseCriteriaApiRepository" class="pl.edu.agh.repository.criteriaapi.WarehouseCriteriaApiRepository">
+        <constructor-arg name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
 </beans>

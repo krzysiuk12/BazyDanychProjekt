@@ -13,4 +13,8 @@
         <constructor-arg name="dataGeneratorRepository" ref="dataGenaratorRepository" />
     </bean>
 
+    <bean name="warehouseService" class="pl.edu.agh.services.WarehouseService">
+        <constructor-arg name="warehouseRepository" ref="warehouseCriteriaApiRepository" />
+    </bean>
+
 </beans>

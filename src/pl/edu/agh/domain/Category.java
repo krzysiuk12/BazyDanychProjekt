@@ -26,7 +26,7 @@ public class Category {
 
     @Id
     @GeneratedValue (strategy = GenerationType.SEQUENCE, generator = "Category_PK_Sequence")
-    @SequenceGenerator(name = "Category_PK_Sequence", sequenceName = "Category_PK_Sequence")
+    @SequenceGenerator(name = "Category_PK_Sequence", sequenceName = "Category_PK_Sequence", initialValue = 1, allocationSize = 1)
     public Long getId() {
         return id;
     }
@@ -74,8 +74,8 @@ public class Category {
     public String toString() {
         StringBuilder builder = new StringBuilder("Category Informations:\n");
         builder.append("\t").append("id = ").append(id).append("\n")
-               .append("\t").append("categoryName = ").append(id).append("\n")
-               .append("\t").append("description = ").append(id).append("\n");
+               .append("\t").append("categoryName = ").append(categoryName).append("\n")
+               .append("\t").append("description = ").append(description).append("\n");
         return builder.toString();
     }
 }

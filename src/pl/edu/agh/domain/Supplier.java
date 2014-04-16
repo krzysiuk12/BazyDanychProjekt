@@ -29,11 +29,10 @@ public class Supplier {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Supplier_PK_Sequence")
-    @SequenceGenerator(name = "Supplier_PK_Sequence", sequenceName = "Supplier_PK_Sequence")
+    @SequenceGenerator(name = "Supplier_PK_Sequence", sequenceName = "Supplier_PK_Sequence", initialValue = 1, allocationSize = 1)
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -44,7 +43,6 @@ public class Supplier {
     public String getCompanyName() {
         return companyName;
     }
-
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
@@ -54,7 +52,6 @@ public class Supplier {
     public String getContactName() {
         return contactName;
     }
-
     public void setContactName(String contactName) {
         this.contactName = contactName;
     }
@@ -64,7 +61,6 @@ public class Supplier {
     public String getContactTitle() {
         return contactTitle;
     }
-
     public void setContactTitle(String contactTitle) {
         this.contactTitle = contactTitle;
     }
@@ -74,7 +70,6 @@ public class Supplier {
     public String getAddress() {
         return address;
     }
-
     public void setAddress(String address) {
         this.address = address;
     }
@@ -84,7 +79,6 @@ public class Supplier {
     public String getCity() {
         return city;
     }
-
     public void setCity(String city) {
         this.city = city;
     }
@@ -94,7 +88,6 @@ public class Supplier {
     public String getRegion() {
         return region;
     }
-
     public void setRegion(String region) {
         this.region = region;
     }
@@ -104,7 +97,6 @@ public class Supplier {
     public String getPostalcode() {
         return postalcode;
     }
-
     public void setPostalcode(String postalcode) {
         this.postalcode = postalcode;
     }
@@ -114,7 +106,6 @@ public class Supplier {
     public String getCountry() {
         return country;
     }
-
     public void setCountry(String country) {
         this.country = country;
     }
@@ -124,7 +115,6 @@ public class Supplier {
     public String getPhone() {
         return phone;
     }
-
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -134,7 +124,6 @@ public class Supplier {
     public String getFax() {
         return fax;
     }
-
     public void setFax(String fax) {
         this.fax = fax;
     }
@@ -144,7 +133,6 @@ public class Supplier {
     public String getHomepage() {
         return homepage;
     }
-
     public void setHomepage(String homepage) {
         this.homepage = homepage;
     }
@@ -155,5 +143,25 @@ public class Supplier {
     }
     public void setSuppliedProducts(Set<Product> suppliedProducts) {
         this.suppliedProducts = suppliedProducts;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder("Supplier Informations: ").append("\n");
+        builder.append("\t").append("id = ").append(id).append("\n")
+                .append("\t").append("companyName = ").append(companyName).append("\n")
+                .append("\t").append("contactName = ").append(contactName).append("\n")
+                .append("\t").append("contactTitle = ").append(contactTitle).append("\n")
+                .append("\t").append("address = ").append(address).append("\n")
+                .append("\t").append("city = ").append(city).append("\n")
+                .append("\t").append("region = ").append(region).append("\n")
+                .append("\t").append("postalcode = ").append(postalcode).append("\n")
+                .append("\t").append("country = ").append(country).append("\n")
+                .append("\t").append("phone = ").append(phone).append("\n")
+                .append("\t").append("fax = ").append(fax).append("\n")
+                .append("\t").append("homepage = ").append(homepage).append("\n");
+
+        return builder.toString();
+
     }
 }

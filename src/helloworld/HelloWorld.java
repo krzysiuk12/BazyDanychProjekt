@@ -2,7 +2,13 @@ package helloworld;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import pl.edu.agh.domain.Category;
+import pl.edu.agh.domain.Supplier;
+import pl.edu.agh.repository.interfaces.IWarehouseRepository;
 import pl.edu.agh.services.interfaces.IDataGeneratorService;
+import pl.edu.agh.services.interfaces.IWarehouseService;
+
+import java.util.List;
 
 /**
  * Created by Krzysiu on 2014-04-02.
@@ -11,27 +17,14 @@ public class HelloWorld {
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-        ((IDataGeneratorService)context.getBean("dataGeneratorService")).generateCategories();
+        IDataGeneratorService dataGeneratorService = ((IDataGeneratorService)context.getBean("dataGeneratorService"));
+        List<Category> categories = dataGeneratorService.generateCategories();
+        List<Supplier> suppliers = dataGeneratorService.generateSuppliers();
+        dataGeneratorService.generateProducts(categories, suppliers);
 
-/*        Configuration configuration = new Configuration().configure();
-        ServiceRegistryBuilder srb = new ServiceRegistryBuilder().applySettings(configuration.getProperties());
-        SessionFactory sf = configuration.buildSessionFactory(srb.buildServiceRegistry());*/
-/*        Session session = sf.openSession();
-        session.getTransaction().begin();
-        List<Shippers> shippers = session.createQuery("from Shippers ").list();
-        for(Shippers shipper : shippers) {
-            System.out.println(shipper);
-        }
-        session.getTransaction().commit();*/
-
-//        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("northwind");
-//        EntityManager entityManager = entityManagerFactory.createEntityManager();
-//        entityManager.getTransaction().begin();
-//        List<Categories> result = entityManager.createQuery( "from Categories ", Categories.class ).getResultList();
-//        for ( Categories category : result ) {
-//            System.out.println(category);
-//        }
-//        entityManager.getTransaction().commit();
-//        entityManager.close();
+        IWarehouseService warehouseService = ((IWarehouseService)context.getBean("warehouseService"));
+        System.out.println(warehouseService.getAllCategories());
+        System.out.println(warehouseService.getAllSuppliers());
+        System.out.println(warehouseService.getAllProducts());
     }
 }

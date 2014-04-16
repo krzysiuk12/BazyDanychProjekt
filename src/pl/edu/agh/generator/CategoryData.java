@@ -5,7 +5,7 @@ package pl.edu.agh.generator;
  */
 public class CategoryData {
 
-    private static final String[] CATEGORY_NAMES = new String[] { "Beverages", "Condiments", "Confections", "Dairy Products", "Grains/Cereals", "Meat/Poultry", "Produce", "Seafood" };
-    private static final String[] CATEGORY_DESCRIPTION = new String[] { "Soft drinks, coffees, teas, beers, and ales", "Sweet and savory sauces, relishes, spreads, and seasonings", "Desserts, candies, and sweet breads", "Cheeses", "Breads, crackers, pasta, and cereal", "Prepared meats", "Dried fruit and bean curd", "Seaweed and fish" };
-    //private static final byte[] CATEGORY_PICTURE = new byte[] {  };
+    public static final int GENERATED_VALUES = 8;
+    public static final String[] CATEGORY_NAMES = new String[] { "Beverages", "Condiments", "Confections", "Dairy Products", "Grains/Cereals", "Meat/Poultry", "Produce", "Seafood" };
+    public static final String[] CATEGORY_DESCRIPTION = new String[] { "Soft drinks, coffees, teas, beers, and ales", "Sweet and savory sauces, relishes, spreads, and seasonings", "Desserts, candies, and sweet breads", "Cheeses", "Breads, crackers, pasta, and cereal", "Prepared meats", "Dried fruit and bean curd", "Seaweed and fish" };
 }
