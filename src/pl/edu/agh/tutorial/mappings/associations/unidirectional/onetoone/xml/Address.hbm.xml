@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="pl.edu.agh.tutorial.mappings.associations.unidirectional.onetoone.xml">
+
+    <class name="Address" table="Addresses"
+           dynamic-insert="false" dynamic-update="false" mutable="true" select-before-update="false">
+
+        <id name="id" column="AddressId" type="long">
+            <generator class="sequence">
+                <param name="sequence">Bidirectional_OneToOne_Xml_PK_Address</param>
+            </generator>
+        </id>
+
+        <property name="address" column="address" type="string" />
+        <property name="city" column="city" type="string" />
+        <property name="region" column="region" type="string" />
+        <property name="postalCode" column="postalCode" type="string" />
+        <property name="country" column="country" type="string" />
+
+    </class>
+
+</hibernate-mapping>

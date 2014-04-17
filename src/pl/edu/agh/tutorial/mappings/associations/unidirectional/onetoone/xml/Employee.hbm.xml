@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="pl.edu.agh.tutorial.mappings.associations.unidirectional.onetoone.xml">
+
+    <class name="Employee" table="Employees"
+           dynamic-insert="false" dynamic-update="false" mutable="true" select-before-update="false">
+
+        <id name="id" column="EmployeeId" type="long">
+            <generator class="sequence">
+                <param name="sequence">Bidirectional_OneToOne_Xml_PK_Employee</param>
+            </generator>
+        </id>
+
+        <property name="firstName" column="firstName" type="string" />
+        <property name="lastName" column="lastName" type="string" />
+        <property name="title" column="title" type="string" />
+        <property name="titleOfCourtesy" column="titleOfCourtesy" type="string" />
+        <property name="birthdate" column="birthdate" type="date" />
+        <property name="hiredate" column="hiredate" type="date" />
+
+        <many-to-one name="address" column="AddressId" class="Address" not-null="true" />
+
+    </class>
+
+</hibernate-mapping>
