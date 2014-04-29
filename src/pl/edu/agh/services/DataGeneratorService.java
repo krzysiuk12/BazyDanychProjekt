@@ -1,6 +1,7 @@
 package pl.edu.agh.services;
 
 import org.springframework.transaction.annotation.Transactional;
+import pl.edu.agh.domain.Address;
 import pl.edu.agh.domain.Category;
 import pl.edu.agh.domain.Product;
 import pl.edu.agh.domain.Supplier;
@@ -48,14 +49,16 @@ public class DataGeneratorService implements IDataGeneratorService {
             supplier.setCompanyName(SuppliersData.SUPPLIERS_COMPANY_NAMES[index]);
             supplier.setContactName(SuppliersData.SUPPLIERS_CONTACT_NAMES[index]);
             supplier.setContactTitle(SuppliersData.SUPPLIERS_CONTACT_TITLES[index]);
-            supplier.setAddress(SuppliersData.SUPPLIERS_ADDRESSES[index]);
-            supplier.setCity(SuppliersData.SUPPLIERS_CITIES[index]);
-            supplier.setCountry(SuppliersData.SUPPLIERS_COUNTRIES[index]);
-            supplier.setRegion(SuppliersData.SUPPLIERS_REGIONS[index]);
-            supplier.setPostalcode(SuppliersData.SUPPLIERS_POSTAL_CODES[index]);
             supplier.setPhone(SuppliersData.SUPPLIERS_PHONES[index]);
             supplier.setFax(SuppliersData.SUPPLIER_FAX[index]);
             supplier.setHomepage(SuppliersData.SUPPLIER_HOME_PAGES[index]);
+            Address address = new Address();
+            address.setAddress(SuppliersData.SUPPLIERS_ADDRESSES[index]);
+            address.setCity(SuppliersData.SUPPLIERS_CITIES[index]);
+            address.setCountry(SuppliersData.SUPPLIERS_COUNTRIES[index]);
+            address.setRegion(SuppliersData.SUPPLIERS_REGIONS[index]);
+            address.setPostalCode(SuppliersData.SUPPLIERS_POSTAL_CODES[index]);
+            supplier.setAddress(address);
             suppliers.add(supplier);
             dataGeneratorRepository.saveSupplier(supplier);
         }
