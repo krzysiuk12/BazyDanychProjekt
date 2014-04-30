@@ -21,7 +21,7 @@ public class Address {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Address_PK_Sequence")
     public Long getId() {
         return id;
     }

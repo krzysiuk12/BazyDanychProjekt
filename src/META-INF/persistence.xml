@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
     <persistence-unit name="northwind">
-        <class>pl.edu.agh.domain.Categories</class>
+<!--        <class>pl.edu.agh.domain.Categories</class>
         <class>pl.edu.agh.domain.Customercustomerdemo</class>
         <class>pl.edu.agh.domain.Customerdemographics</class>
         <class>pl.edu.agh.domain.Customers</class>
@@ -13,7 +13,7 @@
         <class>pl.edu.agh.domain.Region</class>
         <class>pl.edu.agh.domain.Shippers</class>
         <class>pl.edu.agh.domain.Suppliers</class>
-        <class>pl.edu.agh.domain.Territories</class>
+        <class>pl.edu.agh.domain.Territories</class>-->
         <properties>
             <!--<property name="toplink.jdbc.url" value="jdbc:postgresql://localhost:5432/northwind"/>-->
             <!--<property name="toplink.jdbc.driver" value="org.postgresql.Driver"/>-->

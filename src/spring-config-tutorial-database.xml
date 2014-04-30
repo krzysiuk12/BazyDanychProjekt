@@ -17,8 +17,8 @@
 
     <bean name="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-<!--        <property name="annotatedClasses">
-            <list>-->
+        <property name="annotatedClasses">
+            <list>
 <!--                <value>pl.edu.agh.tutorial.mappings.associations.bidirectional.onetomany.annotations.Customer</value>
                 <value>pl.edu.agh.tutorial.mappings.associations.bidirectional.onetomany.annotations.Order</value>-->
 <!--                <value>pl.edu.agh.tutorial.mappings.associations.bidirectional.manytomany.annotations.Customer</value>
@@ -28,9 +28,9 @@
 <!--                <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.singleclass.Customer</value>
                 <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.singleclass.Individual</value>
                 <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.singleclass.Company</value>-->
-<!--                <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.joined.Customer</value>
+                <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.joined.Customer</value>
                 <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.joined.Individual</value>
-                <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.joined.Company</value>-->
+                <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.joined.Company</value>
 <!--                <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.tableperclass.Customer</value>
                 <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.tableperclass.Individual</value>
                 <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.tableperclass.Company</value>-->
@@ -40,10 +40,10 @@
                 <value>pl.edu.agh.tutorial.mappings.associations.unidirectional.manytomany.annotations.Order</value>-->
 <!--                <value>pl.edu.agh.tutorial.mappings.associations.unidirectional.onetomany.annotations.Customer</value>
                 <value>pl.edu.agh.tutorial.mappings.associations.unidirectional.onetomany.annotations.Order</value>-->
-<!--            </list>
-        </property>-->
-        <property name="mappingResources">
-            <list>
+            </list>
+        </property>
+<!--        <property name="mappingResources">
+            <list>-->
 <!--                <value>pl/edu/agh/tutorial/mappings/associations/bidirectional/onetomany/xml/Customer.hbm.xml</value>
                 <value>pl/edu/agh/tutorial/mappings/associations/bidirectional/onetomany/xml/Order.hbm.xml</value>-->
 <!--                <value>pl/edu/agh/tutorial/mappings/associations/bidirectional/manytomany/xml/Customer.hbm.xml</value>
@@ -54,10 +54,10 @@
                 <value>pl/edu/agh/tutorial/mappings/associations/unidirectional/manytomany/xml/Order.hbm.xml</value>-->
 <!--                <value>pl/edu/agh/tutorial/mappings/associations/unidirectional/onetomany/xml/Customer.hbm.xml</value>
                 <value>pl/edu/agh/tutorial/mappings/associations/unidirectional/onetomany/xml/Order.hbm.xml</value>-->
-                <value>pl/edu/agh/tutorial/mappings/associations/unidirectional/onetoone/xml/Employee.hbm.xml</value>
-                <value>pl/edu/agh/tutorial/mappings/associations/unidirectional/onetoone/xml/Address.hbm.xml</value>
-            </list>
-        </property>
+<!--                <value>pl/edu/agh/tutorial/mappings/associations/unidirectional/onetoone/xml/Employee.hbm.xml</value>
+                <value>pl/edu/agh/tutorial/mappings/associations/unidirectional/onetoone/xml/Address.hbm.xml</value>-->
+<!--            </list>
+        </property>-->
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL82Dialect</prop>

@@ -1,7 +1,5 @@
 package pl.edu.agh.domain;
 
-import org.hibernate.annotations.Cascade;
-
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
@@ -16,6 +14,7 @@ public class Employee {
     private Long id;
 
     private Employee reportToEmployee;
+    private Address address;
     private Set<Employee> subordinateEmployees;
     private Set<EmployeeTerritory> employeeTerritories;
     private Set<Order> ordersResponsibleFor;
@@ -26,11 +25,6 @@ public class Employee {
     private String titleOfCourtesy;
     private Date birthdate;
     private Date hiredate;
-    private String address;
-    private String city;
-    private String region;
-    private String postalCode;
-    private String country;
     private String homephone;
     private String extension;
     private byte[] photo;
@@ -101,49 +95,13 @@ public class Employee {
         this.hiredate = hiredate;
     }
 
-    @Basic
-    @Column(name = "address")
-    public String getAddress() {
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "addressId", nullable = false)
+    public Address getAddress() {
         return address;
     }
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
-    }
-
-    @Basic
-    @Column(name = "city")
-    public String getCity() {
-        return city;
-    }
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    @Basic
-    @Column(name = "region")
-    public String getRegion() {
-        return region;
-    }
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
-    @Basic
-    @Column(name = "postalCode")
-    public String getPostalCode() {
-        return postalCode;
-    }
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    @Basic
-    @Column(name = "country")
-    public String getCountry() {
-        return country;
-    }
-    public void setCountry(String country) {
-        this.country = country;
     }
 
     @Basic

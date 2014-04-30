@@ -2615,44 +2615,40 @@
       <column name="viewowner" sqlType="name" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="definition" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
     </table>
-    <table name="bidirectional_onetomany_xml_customer_pk" schema="public" catalog="BazyDanychTutorial" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="bidirectional_onetomany_xml_order_pk" schema="public" catalog="BazyDanychTutorial" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    <table name="companies" schema="public" catalog="BazyDanychTutorial" type="TABLE">
+      <column name="companyname" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fax" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="phone" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="companies_pkey" columns="id"/>
+      <foreign-key name="fk_qfndfqob24p30fmy5a5wemqqc" columns="id" ref-table="customers" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <table name="customers" schema="public" catalog="BazyDanychTutorial" type="TABLE">
-      <column name="customerid" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="address" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="city" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="customers_pkey" columns="id"/>
+      <exported-key name="fk_qfndfqob24p30fmy5a5wemqqc" table="companies" schema="public" catalog="BazyDanychTutorial" columns="id"/>
+      <exported-key name="fk_pji44hg1owm69wwk40hwei56x" table="individuals" schema="public" catalog="BazyDanychTutorial" columns="id"/>
+    </table>
+    <table name="hibernate_sequence" schema="public" catalog="BazyDanychTutorial" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="individuals" schema="public" catalog="BazyDanychTutorial" type="TABLE">
       <column name="firstname" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="lastname" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="customers_pkey" columns="customerid"/>
-      <exported-key name="bidirectional_onetomany_xml_fk" table="orders" schema="public" catalog="BazyDanychTutorial" columns="customerid"/>
-    </table>
-    <table name="orders" schema="public" catalog="BazyDanychTutorial" type="TABLE">
-      <column name="orderid" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="productamount" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="cost" sqlType="float4" precision="8" scale="8" nullable="true" jdbcType="7"/>
-      <column name="customerid" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <primary-key name="orders_pkey" columns="orderid"/>
-      <foreign-key name="bidirectional_onetomany_xml_fk" columns="customerid" ref-table="customers" ref-schema="public" ref-catalog="" ref-columns="customerid" update-rule="3" delete-rule="3" deferrability="2"/>
+      <column name="id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="individuals_pkey" columns="id"/>
+      <foreign-key name="fk_pji44hg1owm69wwk40hwei56x" columns="id" ref-table="customers" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <procedure name="_pg_char_max_length" schema="information_schema" catalog="BazyDanychTutorial" type="2">
       <prototype>

@@ -30,8 +30,9 @@
                 <value>pl.edu.agh.domain.Region</value>
                 <value>pl.edu.agh.domain.Territory</value>
                 <value>pl.edu.agh.domain.EmployeeTerritory</value>
-                <value>pl.edu.agh.domain.CustomerDemographic</value>
-                <value>pl.edu.agh.domain.CustomerTypeMapping</value>
+                <value>pl.edu.agh.domain.Address</value>
+                <value>pl.edu.agh.domain.Company</value>
+                <value>pl.edu.agh.domain.Individual</value>
             </list>
         </property>
         <property name="hibernateProperties">
