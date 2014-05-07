@@ -19,27 +19,55 @@
         <property name="dataSource" ref="dataSource" />
         <property name="annotatedClasses">
             <list>
-<!--                <value>pl.edu.agh.tutorial.mappings.associations.bidirectional.onetomany.annotations.Customer</value>
+<!--                &lt;!&ndash; ******************************** BIDIRECTIONAL - ONE TO MANY ******************************** &ndash;&gt;
+                <value>pl.edu.agh.tutorial.mappings.associations.bidirectional.onetomany.annotations.Customer</value>
                 <value>pl.edu.agh.tutorial.mappings.associations.bidirectional.onetomany.annotations.Order</value>-->
-<!--                <value>pl.edu.agh.tutorial.mappings.associations.bidirectional.manytomany.annotations.Customer</value>
+
+<!--                ******************************** BIDIRECTIONAL - MANY TO MANY ********************************
+                <value>pl.edu.agh.tutorial.mappings.associations.bidirectional.manytomany.annotations.Customer</value>
                 <value>pl.edu.agh.tutorial.mappings.associations.bidirectional.manytomany.annotations.Order</value>-->
-<!--                <value>pl.edu.agh.tutorial.mappings.associations.bidirectional.onetoone.annotations.Employee</value>
+
+<!--                ******************************** BIDIRECTIONAL - ONE TO ONE ********************************
+                <value>pl.edu.agh.tutorial.mappings.associations.bidirectional.onetoone.annotations.Employee</value>
                 <value>pl.edu.agh.tutorial.mappings.associations.bidirectional.onetoone.annotations.Address</value>-->
-<!--                <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.singleclass.Customer</value>
+
+<!--                ******************************** INHERITANCE - SINGLE CLASS********************************
+                <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.singleclass.Customer</value>
                 <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.singleclass.Individual</value>
                 <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.singleclass.Company</value>-->
+
+<!--                ******************************** INHERITANCE - JOINED ********************************
                 <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.joined.Customer</value>
                 <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.joined.Individual</value>
-                <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.joined.Company</value>
-<!--                <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.tableperclass.Customer</value>
+                <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.joined.Company</value>-->
+
+<!--                ******************************** INHERITANCE TABLE PER CLASS ********************************
+                <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.tableperclass.Customer</value>
                 <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.tableperclass.Individual</value>
                 <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.tableperclass.Company</value>-->
-<!--                <value>pl.edu.agh.tutorial.mappings.associations.unidirectional.onetoone.annotations.Employee</value>
+
+<!--                &lt;!&ndash;******************************** UNIDIRECTIONAL - ONE TO ONE ********************************&ndash;&gt;
+                <value>pl.edu.agh.tutorial.mappings.associations.unidirectional.onetoone.annotations.Employee</value>
                 <value>pl.edu.agh.tutorial.mappings.associations.unidirectional.onetoone.annotations.Address</value>-->
-<!--                <value>pl.edu.agh.tutorial.mappings.associations.unidirectional.manytomany.annotations.Customer</value>
+
+<!--                &lt;!&ndash;******************************** UNIDIRECTIONAL - MANY TO MANY ********************************&ndash;&gt;
+                <value>pl.edu.agh.tutorial.mappings.associations.unidirectional.manytomany.annotations.Customer</value>
                 <value>pl.edu.agh.tutorial.mappings.associations.unidirectional.manytomany.annotations.Order</value>-->
-<!--                <value>pl.edu.agh.tutorial.mappings.associations.unidirectional.onetomany.annotations.Customer</value>
+
+<!--                &lt;!&ndash;******************************** UNIDIRECTIONAL - ONE TO MANY ********************************&ndash;&gt;
+                <value>pl.edu.agh.tutorial.mappings.associations.unidirectional.onetomany.annotations.Customer</value>
                 <value>pl.edu.agh.tutorial.mappings.associations.unidirectional.onetomany.annotations.Order</value>-->
+
+                <!--******************************** QUERY EXAMPLES ********************************-->
+                <value>pl.edu.agh.tutorial.domain.Supplier</value>
+                <value>pl.edu.agh.tutorial.domain.Category</value>
+                <value>pl.edu.agh.tutorial.domain.Product</value>
+                <value>pl.edu.agh.tutorial.domain.Customer</value>
+                <value>pl.edu.agh.tutorial.domain.Order</value>
+                <value>pl.edu.agh.tutorial.domain.OrderDetail</value>
+                <value>pl.edu.agh.tutorial.domain.Address</value>
+                <value>pl.edu.agh.tutorial.domain.Company</value>
+                <value>pl.edu.agh.tutorial.domain.Individual</value>
             </list>
         </property>
 <!--        <property name="mappingResources">

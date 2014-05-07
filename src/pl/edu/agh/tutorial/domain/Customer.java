@@ -1,4 +1,4 @@
-package pl.edu.agh.domain;
+package pl.edu.agh.tutorial.domain;
 
 import javax.persistence.*;
 import java.util.Set;

@@ -150,7 +150,7 @@ public class Employee {
     }
 
     @ManyToOne
-    @JoinColumn(name = "reportsToEmployeeId", nullable = false)
+    @JoinColumn(name = "reportsToEmployeeId")
     public Employee getReportToEmployee() {
         return reportToEmployee;
     }

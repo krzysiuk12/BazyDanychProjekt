@@ -1,4 +1,4 @@
-package pl.edu.agh.generator;
+package pl.edu.agh.data;
 
 /**
  * Created by Sławomir on 25.04.14.

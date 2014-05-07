@@ -15,7 +15,7 @@ public interface IDataGeneratorService {
 
     public List<Product> generateProducts(List<Category> categories, List<Supplier> supplier);
 
-    public List<Customer> generateCustomers();
+/*    public List<Customer> generateCustomers();
 
     public List<Region> generateRegions();
 
@@ -25,6 +25,6 @@ public interface IDataGeneratorService {
 
     public List<Shipper> generateShippers();
 
-    public List<Order> generateOrders(List<Customer> customers, List<Employee> employees, List<Shipper> shippers);
+    public List<Order> generateOrders(List<Customer> customers, List<Employee> employees, List<Shipper> shippers);*/
 
 }

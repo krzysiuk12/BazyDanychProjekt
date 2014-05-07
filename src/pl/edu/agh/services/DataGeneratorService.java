@@ -5,9 +5,9 @@ import pl.edu.agh.domain.Address;
 import pl.edu.agh.domain.Category;
 import pl.edu.agh.domain.Product;
 import pl.edu.agh.domain.Supplier;
-import pl.edu.agh.generator.CategoryData;
-import pl.edu.agh.generator.ProductsData;
-import pl.edu.agh.generator.SuppliersData;
+import pl.edu.agh.data.CategoryData;
+import pl.edu.agh.data.ProductsData;
+import pl.edu.agh.data.SuppliersData;
 import pl.edu.agh.repository.interfaces.IDataGeneratorRepository;
 import pl.edu.agh.services.interfaces.IDataGeneratorService;
 

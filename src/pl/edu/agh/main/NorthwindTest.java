@@ -19,12 +19,12 @@ public class NorthwindTest {
         List<Category> categories = dataGeneratorService.generateCategories();
         List<Supplier> suppliers = dataGeneratorService.generateSuppliers();
         dataGeneratorService.generateProducts(categories, suppliers);
-        List<Customer> customers = dataGeneratorService.generateCustomers();
+/*        List<Customer> customers = dataGeneratorService.generateCustomers();
         List<Region> regions = dataGeneratorService.generateRegions();
         List<Territory> territories = dataGeneratorService.generateTerritories(regions);
         List<Employee> employees = dataGeneratorService.generateEmployees();
         List<Shipper> shippers = dataGeneratorService.generateShippers();
-        List<Order> orders = dataGeneratorService.generateOrders(customers, employees, shippers);
+        List<Order> orders = dataGeneratorService.generateOrders(customers, employees, shippers);*/
 
         IWarehouseService warehouseService = ((IWarehouseService)context.getBean("warehouseService"));
         System.out.println(warehouseService.getAllCategories());
