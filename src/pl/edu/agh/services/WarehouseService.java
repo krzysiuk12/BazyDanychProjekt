@@ -2,9 +2,7 @@ package pl.edu.agh.services;
 
 import org.hibernate.Criteria;
 import org.springframework.transaction.annotation.Transactional;
-import pl.edu.agh.domain.Category;
-import pl.edu.agh.domain.Product;
-import pl.edu.agh.domain.Supplier;
+import pl.edu.agh.domain.*;
 import pl.edu.agh.repository.interfaces.IWarehouseRepository;
 import pl.edu.agh.services.interfaces.IWarehouseService;
 
@@ -38,4 +36,41 @@ public class WarehouseService implements IWarehouseService {
     public List<Product> getAllProducts() {
         return warehouseRepository.getAllProducts();
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Customer> getAllCustomers() {
+        return warehouseRepository.getAllCustomers();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Region> getAllRegions() {
+        return warehouseRepository.getAllRegions();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Territory> getAllTerritories() {
+        return warehouseRepository.getAllTerritories();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Employee> getAllEmployees() {
+        return warehouseRepository.getAllEmployees();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Shipper> getAllShippers() {
+        return warehouseRepository.getAllShippers();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Order> getAllOrders() {
+        return warehouseRepository.getAllOrders();
+    }
+
 }

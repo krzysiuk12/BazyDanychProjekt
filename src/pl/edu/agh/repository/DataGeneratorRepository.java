@@ -1,11 +1,11 @@
 package pl.edu.agh.repository;
 
 import org.hibernate.SessionFactory;
-import pl.edu.agh.domain.Category;
-import pl.edu.agh.domain.Product;
-import pl.edu.agh.domain.Supplier;
+import pl.edu.agh.domain.*;
 import pl.edu.agh.repository.BaseHibernateRepository;
 import pl.edu.agh.repository.interfaces.IDataGeneratorRepository;
+
+import java.util.List;
 
 /**
  * Created by Krzysiu on 2014-04-16.
@@ -29,5 +29,36 @@ public class DataGeneratorRepository extends BaseHibernateRepository implements 
     @Override
     public Long saveProduct(Product product) {
         return (Long) getSession().save(product);
+    }
+
+    @Override
+    public Long saveCustomer(Customer customer) {
+        return (Long) getSession().save(customer);
+    }
+
+    @Override
+    public Long saveRegion(Region region) {
+        return  (Long) getSession().save(region);
+    }
+
+    @Override
+    public Long saveTerritory(Territory territory) {
+        return (Long) getSession().save(territory);
+    }
+
+    @Override
+    public Long saveEmployee(Employee employee) {
+        return (Long) getSession().save(employee);
+    }
+
+
+    @Override
+    public Long saveShipper(Shipper shipper) {
+        return (Long) getSession().save(shipper);
+    }
+
+    @Override
+    public Long saveOrder(Order order) {
+        return (Long) getSession().save(order);
     }
 }

@@ -1,8 +1,6 @@
 package pl.edu.agh.repository.interfaces;
 
-import pl.edu.agh.domain.Category;
-import pl.edu.agh.domain.Product;
-import pl.edu.agh.domain.Supplier;
+import pl.edu.agh.domain.*;
 
 import java.util.List;
 
@@ -16,5 +14,17 @@ public interface IWarehouseRepository {
     List<Supplier> getAllSuppliers();
 
     List<Product> getAllProducts();
+
+    List<Customer> getAllCustomers();
+
+    List<Region> getAllRegions();
+
+    List<Territory> getAllTerritories();
+
+    List<Employee> getAllEmployees();
+
+    List<Shipper> getAllShippers();
+
+    List<Order> getAllOrders();
 
 }

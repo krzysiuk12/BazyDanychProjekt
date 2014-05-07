@@ -1,8 +1,6 @@
 package pl.edu.agh.services.interfaces;
 
-import pl.edu.agh.domain.Category;
-import pl.edu.agh.domain.Product;
-import pl.edu.agh.domain.Supplier;
+import pl.edu.agh.domain.*;
 
 import java.util.List;
 
@@ -16,5 +14,17 @@ public interface IDataGeneratorService {
     public List<Supplier> generateSuppliers();
 
     public List<Product> generateProducts(List<Category> categories, List<Supplier> supplier);
+
+    public List<Customer> generateCustomers();
+
+    public List<Region> generateRegions();
+
+    public List<Territory> generateTerritories(List<Region> regions);
+
+    public List<Employee> generateEmployees();
+
+    public List<Shipper> generateShippers();
+
+    public List<Order> generateOrders(List<Customer> customers, List<Employee> employees, List<Shipper> shippers);
 
 }

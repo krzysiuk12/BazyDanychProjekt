@@ -13,4 +13,16 @@ public interface IDataGeneratorRepository {
 
     Long saveProduct(Product product);
 
+    Long saveCustomer(Customer customer);
+
+    Long saveRegion(Region region);
+
+    Long saveTerritory(Territory territory);
+
+    Long saveEmployee(Employee employee);
+
+    Long saveShipper(Shipper shipper);
+
+    Long saveOrder(Order order);
+
 }
