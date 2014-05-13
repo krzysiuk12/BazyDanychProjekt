@@ -6,12 +6,12 @@
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
 
-    <import resource="spring-config-repositories.xml" />
+    <import resource="spring-config-tutorial-repositories.xml" />
 
     <tx:annotation-driven proxy-target-class="true" transaction-manager="transactionManager"/>
 
-    <bean name="dataGeneratorService" class="pl.edu.agh.services.DataGeneratorService">
+<!--    <bean name="dataGeneratorService" class="pl.edu.agh.services.DataGeneratorService">
         <constructor-arg name="dataGeneratorRepository" ref="dataGenaratorRepository" />
-    </bean>
+    </bean>-->
 
 </beans>

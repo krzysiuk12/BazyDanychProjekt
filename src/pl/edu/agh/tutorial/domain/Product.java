@@ -18,8 +18,6 @@ public class Product {
     private String quantityPerUnit;
     private float unitPrice;
     private int unitsInStock;
-    private int unitsOnOrder;
-    private int reorderLevel;
     private boolean discontinued;
 
     @Id
@@ -87,24 +85,6 @@ public class Product {
     }
 
     @Basic
-    @Column(name = "unitsOnOrder")
-    public int getUnitsOnOrder() {
-        return unitsOnOrder;
-    }
-    public void setUnitsOnOrder(int unitsOnOrder) {
-        this.unitsOnOrder = unitsOnOrder;
-    }
-
-    @Basic
-    @Column(name = "reorderLevel")
-    public int getReorderLevel() {
-        return reorderLevel;
-    }
-    public void setReorderLevel(int reorderLevel) {
-        this.reorderLevel = reorderLevel;
-    }
-
-    @Basic
     @Column(name = "discontinued")
     public boolean isDiscontinued() {
         return discontinued;
@@ -121,8 +101,6 @@ public class Product {
                 .append("\t").append("quantityPerUnit = ").append(quantityPerUnit).append("\n")
                 .append("\t").append("unitPrice = ").append(unitPrice).append("\n")
                 .append("\t").append("unitsInStock = ").append(unitsInStock).append("\n")
-                .append("\t").append("unitsOnOrder = ").append(unitsOnOrder).append("\n")
-                .append("\t").append("reorderLevel = ").append(reorderLevel).append("\n")
                 .append("\t").append("discontinued = ").append(discontinued).append("\n");
         return builder.toString();
     }

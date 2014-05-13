@@ -19,8 +19,6 @@ public class Order {
     private Date orderDate;
     private Date requiredDate;
     private Date shippedDate;
-    private float freight;
-    private String shipName;
     private String shipAddress;
     private String shipCity;
     private String shipRegion;
@@ -79,24 +77,6 @@ public class Order {
     }
     public void setShippedDate(Date shippedDate) {
         this.shippedDate = shippedDate;
-    }
-
-    @Basic
-    @Column(name = "freight")
-    public float getFreight() {
-        return freight;
-    }
-    public void setFreight(float freight) {
-        this.freight = freight;
-    }
-
-    @Basic
-    @Column(name = "shipName")
-    public String getShipName() {
-        return shipName;
-    }
-    public void setShipName(String shipName) {
-        this.shipName = shipName;
     }
 
     @Basic

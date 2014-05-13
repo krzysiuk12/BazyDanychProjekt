@@ -17,7 +17,6 @@ public class Category {
 
     private String categoryName;
     private String description;
-    private byte[] picture;
 
     public Category() {
     }
@@ -34,7 +33,7 @@ public class Category {
 
     @Basic
     @NotNull
-    @Column(name = "categoryName", unique = true)
+    @Column(name = "categoryName")
     public String getCategoryName() {
         return categoryName;
     }
@@ -49,15 +48,6 @@ public class Category {
     }
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    @Lob
-    @Column(name = "picture")
-    public byte[] getPicture() {
-        return picture;
-    }
-    public void setPicture(byte[] picture) {
-        this.picture = picture;
     }
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category", fetch = FetchType.LAZY)

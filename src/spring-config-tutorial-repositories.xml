@@ -9,7 +9,7 @@
 
     <tx:annotation-driven proxy-target-class="true" transaction-manager="transactionManager"/>
 
-    <bean name="dataGenaratorRepository" class="pl.edu.agh.repository.DataGeneratorRepository">
+    <bean name="dataGenaratorTutorialRepository" class="pl.edu.agh.tutorial.generator.DataGeneratorRepository">
         <constructor-arg name="sessionFactory" ref="sessionFactory" />
     </bean>
 

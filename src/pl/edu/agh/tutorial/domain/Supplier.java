@@ -17,11 +17,7 @@ public class Supplier {
     private Set<Product> suppliedProducts;
 
     private String companyName;
-    private String contactName;
-    private String contactTitle;
     private String phone;
-    private String fax;
-    private String homepage;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Supplier_PK_Sequence")
@@ -53,48 +49,12 @@ public class Supplier {
     }
 
     @Basic
-    @Column(name = "contactName")
-    public String getContactName() {
-        return contactName;
-    }
-    public void setContactName(String contactName) {
-        this.contactName = contactName;
-    }
-
-    @Basic
-    @Column(name = "contactTitle")
-    public String getContactTitle() {
-        return contactTitle;
-    }
-    public void setContactTitle(String contactTitle) {
-        this.contactTitle = contactTitle;
-    }
-
-    @Basic
     @Column(name = "phone")
     public String getPhone() {
         return phone;
     }
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    @Basic
-    @Column(name = "fax")
-    public String getFax() {
-        return fax;
-    }
-    public void setFax(String fax) {
-        this.fax = fax;
-    }
-
-    @Basic
-    @Column(name = "homepage")
-    public String getHomepage() {
-        return homepage;
-    }
-    public void setHomepage(String homepage) {
-        this.homepage = homepage;
     }
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "supplier", fetch = FetchType.LAZY)
@@ -110,12 +70,8 @@ public class Supplier {
         StringBuilder builder = new StringBuilder("Supplier Informations: ").append("\n");
         builder.append("\t").append("id = ").append(id).append("\n")
                 .append("\t").append("companyName = ").append(companyName).append("\n")
-                .append("\t").append("contactName = ").append(contactName).append("\n")
-                .append("\t").append("contactTitle = ").append(contactTitle).append("\n")
                 .append("\t").append("address = ").append(address).append("\n")
-                .append("\t").append("phone = ").append(phone).append("\n")
-                .append("\t").append("fax = ").append(fax).append("\n")
-                .append("\t").append("homepage = ").append(homepage).append("\n");
+                .append("\t").append("phone = ").append(phone).append("\n");
 
         return builder.toString();
 
