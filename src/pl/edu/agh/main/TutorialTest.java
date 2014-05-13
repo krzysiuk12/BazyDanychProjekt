@@ -3,6 +3,7 @@ package pl.edu.agh.main;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import pl.edu.agh.tutorial.generator.DataGeneratorRepository;
+import pl.edu.agh.tutorial.queries.criteriaapi.repositories.RestrictionsCriteriaApi;
 import pl.edu.agh.tutorial.queries.criteriaapi.repositories.SimpleCriteriaApi;
 
 import java.util.List;
@@ -14,18 +15,26 @@ public class TutorialTest {
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config-tutorial.xml");
-        DataGeneratorRepository dataGeneratorService = ((DataGeneratorRepository)context.getBean("dataGenaratorTutorialRepository"));
-/*
-        List<Category> categories = dataGeneratorService.generateCategories();
-        List<Supplier> suppliers = dataGeneratorService.generateSuppliers();
-        dataGeneratorService.generateProducts(categories, suppliers);
-*/
-        dataGeneratorService.generateData();
+/*        DataGeneratorRepository dataGeneratorService = ((DataGeneratorRepository)context.getBean("dataGenaratorTutorialRepository"));
+        dataGeneratorService.generateData();*/
 
 
         SimpleCriteriaApi simpleCriteriaApi = (SimpleCriteriaApi)context.getBean("simpleCriteriaApi");
-        System.out.println(simpleCriteriaApi.getAllProducts());
+/*        simpleCriteriaApi.getAllProducts();
+        simpleCriteriaApi.getCompaniesTypesOfResult();
+        simpleCriteriaApi.getCompaniesWithCriteriaOrdering();*/
+/*        simpleCriteriaApi.getOrdersFetchModes();*/
+        simpleCriteriaApi.getOrdersWithResultTransformers();
 
+
+/*        RestrictionsCriteriaApi restrictionsCriteriaApi = (RestrictionsCriteriaApi)context.getBean("restrictionsCriteriaApi");
+        restrictionsCriteriaApi.getCompaniesWithNameRestriction();
+        restrictionsCriteriaApi.getCompaniesWithNameRestrictionMatchModes();
+        restrictionsCriteriaApi.getIndividualsWithInRestriction();
+        restrictionsCriteriaApi.getOrdersWithNullRestrictions();
+        restrictionsCriteriaApi.getOrdersWithOrderDetailsCollectionRestrictions();
+        restrictionsCriteriaApi.getProductCombinedRestrictions();
+        restrictionsCriteriaApi.getProductsWithNumberRestrictions();*/
     }
 
 }

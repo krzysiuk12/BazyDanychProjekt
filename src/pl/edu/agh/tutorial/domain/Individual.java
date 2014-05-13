@@ -9,7 +9,7 @@ import javax.persistence.Table;
  * Created by Krzysiu on 2014-04-29.
  */
 @Entity
-@Table(name = "Individual")
+@Table(name = "Individuals")
 public class Individual extends Customer {
 
     private String firstName;
@@ -31,5 +31,13 @@ public class Individual extends Customer {
     }
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "Individual{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 }

@@ -17,4 +17,8 @@
         <constructor-arg name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
+    <bean name="restrictionsCriteriaApi" class="pl.edu.agh.tutorial.queries.criteriaapi.repositories.RestrictionsCriteriaApi">
+        <constructor-arg name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
 </beans>

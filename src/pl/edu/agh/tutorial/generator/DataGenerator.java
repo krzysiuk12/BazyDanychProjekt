@@ -43,6 +43,7 @@ public class DataGenerator {
             address.setPostalCode(CustomersData.POSTAL_CODES[RANDOM.nextInt(CustomersData.POSTAL_CODES.length)]);
             address.setCountry(CustomersData.COUNTRIES[RANDOM.nextInt(CustomersData.COUNTRIES.length)]);
             individual.setAddress(address);
+            resultSet.add(individual);
         }
         return resultSet;
     }
@@ -105,6 +106,7 @@ public class DataGenerator {
             order.setShipCountry(OrdersData.SHIP_COUNTRIES[RANDOM.nextInt(OrdersData.SHIP_COUNTRIES.length)]);
             createOrderDetails(RANDOM.nextInt(15), products, order);
             createOrderDates(index % 3, order);
+            orders.add(order);
         }
         return orders;
     }

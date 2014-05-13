@@ -9,7 +9,7 @@ import javax.persistence.Table;
  * Created by Krzysiu on 2014-04-29.
  */
 @Entity
-@Table(name = "Company")
+@Table(name = "Companies")
 public class Company extends Customer {
 
     private String companyName;
