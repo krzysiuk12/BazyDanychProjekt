@@ -21,4 +21,8 @@
         <constructor-arg name="sessionFactory" ref="sessionFactory" />
     </bean>
 
+    <bean name="projectionsCriteriaApi" class="pl.edu.agh.tutorial.queries.criteriaapi.repositories.ProjectionsCriteriaApi">
+        <constructor-arg name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
 </beans>

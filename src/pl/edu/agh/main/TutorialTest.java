@@ -3,6 +3,7 @@ package pl.edu.agh.main;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import pl.edu.agh.tutorial.generator.DataGeneratorRepository;
+import pl.edu.agh.tutorial.queries.criteriaapi.repositories.ProjectionsCriteriaApi;
 import pl.edu.agh.tutorial.queries.criteriaapi.repositories.RestrictionsCriteriaApi;
 import pl.edu.agh.tutorial.queries.criteriaapi.repositories.SimpleCriteriaApi;
 
@@ -24,7 +25,8 @@ public class TutorialTest {
         simpleCriteriaApi.getCompaniesTypesOfResult();
         simpleCriteriaApi.getCompaniesWithCriteriaOrdering();*/
 /*        simpleCriteriaApi.getOrdersFetchModes();*/
-        simpleCriteriaApi.getOrdersWithResultTransformers();
+/*        simpleCriteriaApi.getOrdersWithResultTransformers();*/
+        simpleCriteriaApi.cartesianProductProblem2Collections();
 
 
 /*        RestrictionsCriteriaApi restrictionsCriteriaApi = (RestrictionsCriteriaApi)context.getBean("restrictionsCriteriaApi");
@@ -35,6 +37,11 @@ public class TutorialTest {
         restrictionsCriteriaApi.getOrdersWithOrderDetailsCollectionRestrictions();
         restrictionsCriteriaApi.getProductCombinedRestrictions();
         restrictionsCriteriaApi.getProductsWithNumberRestrictions();*/
+
+        ProjectionsCriteriaApi projectionsCriteriaApi = (ProjectionsCriteriaApi)context.getBean("projectionsCriteriaApi");
+        projectionsCriteriaApi.rowCountProjection();
+        projectionsCriteriaApi.aggregationFunctionsProjections();
+        projectionsCriteriaApi.groupByProjections();
     }
 
 }

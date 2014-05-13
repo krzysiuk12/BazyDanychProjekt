@@ -115,6 +115,14 @@ public class SimpleCriteriaApi extends BaseHibernateRepository {
         System.out.println(list.size());
     }
 
+    @Transactional
+    public void cartesianProductProblem2Collections() {
+        Criteria criteria = getSession().createCriteria(Customer.class);
+        criteria.setFetchMode("orders", FetchMode.JOIN);
+        criteria.setFetchMode("orders.orderDetails", FetchMode.JOIN);
+        createDescription("getOrdersWithResultTransformers - CRITERIA", criteria.list());
+    }
+
     private void createDescription(String label, List<?> list) {
         System.out.println(label + ": " + list.size() + "\n" + label + ": " + list);
     }
