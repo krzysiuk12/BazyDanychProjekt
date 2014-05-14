@@ -25,4 +25,8 @@
         <constructor-arg name="sessionFactory" ref="sessionFactory" />
     </bean>
 
+    <bean name="simpleHql" class="pl.edu.agh.tutorial.queries.hql.SimpleHql">
+        <constructor-arg name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
 </beans>

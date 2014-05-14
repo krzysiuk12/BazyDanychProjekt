@@ -6,6 +6,7 @@ import pl.edu.agh.tutorial.generator.DataGeneratorRepository;
 import pl.edu.agh.tutorial.queries.criteriaapi.repositories.ProjectionsCriteriaApi;
 import pl.edu.agh.tutorial.queries.criteriaapi.repositories.RestrictionsCriteriaApi;
 import pl.edu.agh.tutorial.queries.criteriaapi.repositories.SimpleCriteriaApi;
+import pl.edu.agh.tutorial.queries.hql.SimpleHql;
 
 import java.util.List;
 
@@ -20,13 +21,13 @@ public class TutorialTest {
         dataGeneratorService.generateData();*/
 
 
-        SimpleCriteriaApi simpleCriteriaApi = (SimpleCriteriaApi)context.getBean("simpleCriteriaApi");
-/*        simpleCriteriaApi.getAllProducts();
+/*        SimpleCriteriaApi simpleCriteriaApi = (SimpleCriteriaApi)context.getBean("simpleCriteriaApi");
+        simpleCriteriaApi.getAllProducts();
         simpleCriteriaApi.getCompaniesTypesOfResult();
-        simpleCriteriaApi.getCompaniesWithCriteriaOrdering();*/
-/*        simpleCriteriaApi.getOrdersFetchModes();*/
-/*        simpleCriteriaApi.getOrdersWithResultTransformers();*/
-        simpleCriteriaApi.cartesianProductProblem2Collections();
+        simpleCriteriaApi.getCompaniesWithCriteriaOrdering();
+        simpleCriteriaApi.getOrdersFetchModes();
+        simpleCriteriaApi.getOrdersWithResultTransformers();
+        simpleCriteriaApi.cartesianProductProblem2Collections();*/
 
 
 /*        RestrictionsCriteriaApi restrictionsCriteriaApi = (RestrictionsCriteriaApi)context.getBean("restrictionsCriteriaApi");
@@ -38,10 +39,18 @@ public class TutorialTest {
         restrictionsCriteriaApi.getProductCombinedRestrictions();
         restrictionsCriteriaApi.getProductsWithNumberRestrictions();*/
 
-        ProjectionsCriteriaApi projectionsCriteriaApi = (ProjectionsCriteriaApi)context.getBean("projectionsCriteriaApi");
+/*        ProjectionsCriteriaApi projectionsCriteriaApi = (ProjectionsCriteriaApi)context.getBean("projectionsCriteriaApi");
         projectionsCriteriaApi.rowCountProjection();
         projectionsCriteriaApi.aggregationFunctionsProjections();
-        projectionsCriteriaApi.groupByProjections();
+        projectionsCriteriaApi.groupByProjections();*/
+
+        SimpleHql simpleHql = (SimpleHql)context.getBean("simpleHql");
+        //simpleHql.associationsAndJoinsExamples();
+        //simpleHql.hqlExpressionExamples();
+        //simpleHql.dateManipulationExamples();
+        //simpleHql.stringManipulationExamples();
+        //simpleHql.aggregateFunctions();
+        simpleHql.groupByExample();
     }
 
 }
