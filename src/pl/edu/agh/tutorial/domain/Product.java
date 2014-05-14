@@ -7,6 +7,11 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "Products")
+@NamedQueries({
+        @NamedQuery(name = "findAllProductsAnnotations", query = "from Product"),
+        @NamedQuery(name = "findAllProductsWithCategoryAnnotations", query = "from Product as product inner join product.category as category where category.categoryName = :categoryName"),
+        @NamedQuery(name = "findAllProductsWithUnitsInStockBetweenAnnotations", query = "from Product as product where product.unitsInStock between :mininum and :maximum")
+})
 public class Product {
 
     private Long id;
@@ -95,13 +100,13 @@ public class Product {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder("Product Informations: ").append("\n");
-        builder.append("\t").append("id = ").append(id).append("\n")
-                .append("\t").append("productName = ").append(productName).append("\n")
+        StringBuilder builder = new StringBuilder();//"Product Informations: ").append("\n");
+        builder.append("\t").append("id = ").append(id);//.append("\n")
+/*                .append("\t").append("productName = ").append(productName).append("\n")
                 .append("\t").append("quantityPerUnit = ").append(quantityPerUnit).append("\n")
                 .append("\t").append("unitPrice = ").append(unitPrice).append("\n")
                 .append("\t").append("unitsInStock = ").append(unitsInStock).append("\n")
-                .append("\t").append("discontinued = ").append(discontinued).append("\n");
+                .append("\t").append("discontinued = ").append(discontinued).append("\n");*/
         return builder.toString();
     }
 }

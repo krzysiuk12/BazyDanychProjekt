@@ -7,6 +7,7 @@ import pl.edu.agh.tutorial.queries.criteriaapi.repositories.ProjectionsCriteriaA
 import pl.edu.agh.tutorial.queries.criteriaapi.repositories.RestrictionsCriteriaApi;
 import pl.edu.agh.tutorial.queries.criteriaapi.repositories.SimpleCriteriaApi;
 import pl.edu.agh.tutorial.queries.hql.SimpleHql;
+import pl.edu.agh.tutorial.queries.namedqueries.NamedQueriesExamples;
 
 import java.util.List;
 
@@ -51,6 +52,15 @@ public class TutorialTest {
         //simpleHql.stringManipulationExamples();
         //simpleHql.aggregateFunctions();
         simpleHql.groupByExample();
+
+        NamedQueriesExamples namedQueriesExamples = (NamedQueriesExamples)context.getBean("namedQueries");
+        namedQueriesExamples.findAllProductsNamedQuery();
+        namedQueriesExamples.findAllProductsWithUnitStockBetweenNamedQuery();
+        namedQueriesExamples.findAllProductsWithCategoryNamedQuery();
+        //TODO: namedQueriesExamples.findAllProductsSQLNamedQuery();
+        namedQueriesExamples.findAllProductsAnnotationsNamedQuery();
+        namedQueriesExamples.findAllProductsWithCategoryAnootationsNamedQuery();
+        namedQueriesExamples.findAllProductsWithUnitStockBetweenAnnotationsNamedQuery();
     }
 
 }

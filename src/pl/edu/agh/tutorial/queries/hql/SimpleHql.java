@@ -49,23 +49,23 @@ public class SimpleHql extends BaseHibernateRepository {
     @Transactional(readOnly = true)
     public void hqlExpressionExamples() {
         //IN and NOT IN - operator
-        List<Customer> customers = getSession().createQuery("from Individual as individual where individual.firstName in ('Juan', 'Daniel', 'Maria')").list();
-        createDescription("HQL - IN Operator Test", customers);
-        List<Customer> customersNotIn = getSession().createQuery("from Individual as individual where individual.firstName not in ('Juan', 'Daniel', 'Maria')").list();
-        createDescription("HQL - IN Operator Test", customersNotIn);
+    List<Customer> customers = getSession().createQuery("from Individual as individual where individual.firstName in ('Juan', 'Daniel', 'Maria')").list();
+    createDescription("HQL - IN Operator Test", customers);
+    List<Customer> customersNotIn = getSession().createQuery("from Individual as individual where individual.firstName not in ('Juan', 'Daniel', 'Maria')").list();
+    createDescription("HQL - IN Operator Test", customersNotIn);
 
-        //IS EMPTY and IS NOT EMPTY - operator test
-        List<Order> orders = getSession().createQuery("from Order as ord where ord.orderDetails is empty").list();
-        createDescription("HQL - IS EMPTY Operator Test", orders);
-        List<Order> ordersNotEmpty = getSession().createQuery("from Order as ord where ord.orderDetails is not empty").list();
-        createDescription("HQL - IS EMPTY Operator Test", ordersNotEmpty);
+    //IS EMPTY and IS NOT EMPTY - operator test
+    List<Order> orders = getSession().createQuery("from Order as ord where ord.orderDetails is empty").list();
+    createDescription("HQL - IS EMPTY Operator Test", orders);
+    List<Order> ordersNotEmpty = getSession().createQuery("from Order as ord where ord.orderDetails is not empty").list();
+    createDescription("HQL - IS EMPTY Operator Test", ordersNotEmpty);
 
-        //IS NULL and IS NOT NULL - operator test
-        List<Order> shippedOrders = getSession().createQuery("from Order as ord where ord.shippedDate is not null").list();
-        createDescription("HQL - IS NULL Operator Test", shippedOrders);
-        List<Order> notShippedOrders = getSession().createQuery("from Order as ord where ord.shippedDate is null").list();
-        createDescription("HQL - IS NOT NULL Operator Test", notShippedOrders);
-    }
+    //IS NULL and IS NOT NULL - operator test
+    List<Order> shippedOrders = getSession().createQuery("from Order as ord where ord.shippedDate is not null").list();
+    createDescription("HQL - IS NULL Operator Test", shippedOrders);
+    List<Order> notShippedOrders = getSession().createQuery("from Order as ord where ord.shippedDate is null").list();
+    createDescription("HQL - IS NOT NULL Operator Test", notShippedOrders);
+}
 
     @Transactional(readOnly = true)
     public void dateManipulationExamples() {
@@ -93,7 +93,7 @@ public class SimpleHql extends BaseHibernateRepository {
 
     @Transactional(readOnly = true)
     public void groupByExample() {
-        List<Object> groupByExample = getSession().createQuery("select cat.categoryName, count(product.id) from Product as product inner join product.category as cat group by cat.categoryName having cat.id > 5").list();
+        List<Object> groupByExample = getSession().createQuery("select cat.categoryName, count(product.id) from Product as product inner join product.category as cat group by cat.categoryName").list();
         createDescription("HQL - Group By and Having Test", groupByExample);
     }
 

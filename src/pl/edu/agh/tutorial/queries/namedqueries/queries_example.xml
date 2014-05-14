@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="pl.edu.agh.tutorial.mappings.associations.unidirectional.onetomany.xml">
+
+    <query name="findAllProducts">
+        from Product
+    </query>
+
+    <query name="findAllProductsWithUnitStockBetween">
+        <query-param name="minimum" type="int" />
+        <query-param name="maximum" type="int" />
+        from Product as product where product.unitsInStock between :mininum and :maximum
+    </query>
+
+    <query name="findAllProductsWithCategory">
+        <query-param name="categoryName" type="string" />
+        from Product as product inner join product.category as category where category.categoryName = :categoryName
+    </query>
+
+    <sql-query name="findAllProductsSQL">
+        <query-param name="id" type="long"/>
+        <return alias="product" class="pl.edu.agh.tutorial.domain.Product"/>
+        <return-join alias="category" property="product.category"/>
+        SELECT
+            product.id AS {product.id},
+            product.productname AS {product.productName},
+            product.unitprice AS {product.unitPrice},
+            category.categoryname as {category.categoryName}
+        FROM Products product
+        JOIN Categories category ON product.categoryid = category.id
+        WHERE product.id = :id
+    </sql-query>
+
+</hibernate-mapping>

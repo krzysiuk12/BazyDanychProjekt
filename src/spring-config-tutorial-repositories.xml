@@ -29,4 +29,8 @@
         <constructor-arg name="sessionFactory" ref="sessionFactory" />
     </bean>
 
+    <bean name="namedQueries" class="pl.edu.agh.tutorial.queries.namedqueries.NamedQueriesExamples">
+        <constructor-arg name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
 </beans>
