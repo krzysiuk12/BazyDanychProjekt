@@ -21,6 +21,11 @@ public class Category {
     public Category() {
     }
 
+    public Category(String categoryName, String description) {
+        this.categoryName = categoryName;
+        this.description = description;
+    }
+
     @Id
     @GeneratedValue (strategy = GenerationType.SEQUENCE, generator = "Category_PK_Sequence")
     @SequenceGenerator(name = "Category_PK_Sequence", sequenceName = "Category_PK_Sequence", initialValue = 1, allocationSize = 1)

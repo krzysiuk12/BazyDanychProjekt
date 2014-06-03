@@ -42,6 +42,8 @@
     <orderEntry type="library" name="JPA 2.0-2.0" level="project" />
     <orderEntry type="library" name="Hibernate Validator-5.0.1" level="project" />
     <orderEntry type="library" name="postgresql-9.3-1100.jdbc4" level="project" />
+    <orderEntry type="library" name="aspectjrt-1.8.0" level="project" />
+    <orderEntry type="library" name="aspectjtools-1.5.3" level="project" />
   </component>
 </module>
 

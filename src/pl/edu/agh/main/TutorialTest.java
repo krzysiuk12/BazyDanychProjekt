@@ -2,14 +2,7 @@ package pl.edu.agh.main;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import pl.edu.agh.tutorial.generator.DataGeneratorRepository;
-import pl.edu.agh.tutorial.queries.criteriaapi.repositories.ProjectionsCriteriaApi;
-import pl.edu.agh.tutorial.queries.criteriaapi.repositories.RestrictionsCriteriaApi;
-import pl.edu.agh.tutorial.queries.criteriaapi.repositories.SimpleCriteriaApi;
-import pl.edu.agh.tutorial.queries.hql.SimpleHql;
-import pl.edu.agh.tutorial.queries.namedqueries.NamedQueriesExamples;
-
-import java.util.List;
+import pl.edu.agh.tutorial.performanceTest.InsertPerformanceTest;
 
 /**
  * Created by Krzysiu on 2014-04-16.
@@ -45,13 +38,13 @@ public class TutorialTest {
         projectionsCriteriaApi.aggregationFunctionsProjections();
         projectionsCriteriaApi.groupByProjections();*/
 
-        SimpleHql simpleHql = (SimpleHql)context.getBean("simpleHql");
-        //simpleHql.associationsAndJoinsExamples();
-        //simpleHql.hqlExpressionExamples();
-        //simpleHql.dateManipulationExamples();
-        //simpleHql.stringManipulationExamples();
-        //simpleHql.aggregateFunctions();
-        simpleHql.groupByExample();
+/*        SimpleHql simpleHql = (SimpleHql)context.getBean("simpleHql");
+        simpleHql.associationsAndJoinsExamples();
+        simpleHql.hqlExpressionExamples();
+        simpleHql.dateManipulationExamples();
+        simpleHql.stringManipulationExamples();
+        simpleHql.aggregateFunctions();*/
+/*        simpleHql.groupByExample();
 
         NamedQueriesExamples namedQueriesExamples = (NamedQueriesExamples)context.getBean("namedQueries");
         namedQueriesExamples.findAllProductsNamedQuery();
@@ -60,7 +53,16 @@ public class TutorialTest {
         //TODO: namedQueriesExamples.findAllProductsSQLNamedQuery();
         namedQueriesExamples.findAllProductsAnnotationsNamedQuery();
         namedQueriesExamples.findAllProductsWithCategoryAnootationsNamedQuery();
-        namedQueriesExamples.findAllProductsWithUnitStockBetweenAnnotationsNamedQuery();
+        namedQueriesExamples.findAllProductsWithUnitStockBetweenAnnotationsNamedQuery();*/
+
+        InsertPerformanceTest insertPerformanceTest = (InsertPerformanceTest)context.getBean("insertPerformanceTest");
+        //insertPerformanceTest.testMaxWithoutSessionFlush();
+        //insertPerformanceTest.testMaxWithSessionFlush();
+        insertPerformanceTest.testMaxWithSessionFlush100();
+        insertPerformanceTest.testMaxWithSessionFlush200();
+        insertPerformanceTest.testMaxWithSessionFlush1000();
+        insertPerformanceTest.testMaxWithSessionFlush5000();
+        insertPerformanceTest.testMaxWithSessionFlush10000();
     }
 
 }
