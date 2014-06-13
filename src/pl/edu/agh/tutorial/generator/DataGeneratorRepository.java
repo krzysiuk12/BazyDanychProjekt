@@ -14,12 +14,20 @@ import java.util.List;
 public class DataGeneratorRepository extends BaseHibernateRepository {
 
     private static final DataGenerator DATA_GENERATOR = new DataGenerator();
-    private static final int COMPANIES_SIZE = 100;
+/*    private static final int COMPANIES_SIZE = 1000;
     private static final int PERSONS_SIZE = 100;
-    private static final int CATEGORIES_SIZE = 50;
-    private static final int PRODUCTS_SIZE = 100;
-    private static final int SUPPLIERS_SIZE = 30;
-    private static final int ORDERS_SIZE = 200;
+    private static final int CATEGORIES_SIZE = 500;
+    private static final int PRODUCTS_SIZE = 1;
+    private static final int SUPPLIERS_SIZE = 300;
+    private static final int ORDERS_SIZE = 2000;*/
+
+    private static final int COMPANIES_SIZE = 10000;
+    private static final int PERSONS_SIZE = 10000;
+    private static final int CATEGORIES_SIZE = 2000;
+    private static final int PRODUCTS_SIZE = 150000;
+    private static final int SUPPLIERS_SIZE = 10000;
+    private static final int ORDERS_SIZE = 10000;
+
 
     public DataGeneratorRepository(SessionFactory sessionFactory) {
         super(sessionFactory);

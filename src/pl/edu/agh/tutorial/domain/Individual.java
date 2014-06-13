@@ -1,9 +1,6 @@
 package pl.edu.agh.tutorial.domain;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by Krzysiu on 2014-04-29.

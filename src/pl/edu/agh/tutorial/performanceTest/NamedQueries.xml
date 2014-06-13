@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="pl.edu.agh.tutorial.mappings.inheritance.annotations.joined">
+
+    <query name="getNumberOfOrdersNamedQuery">
+        select ord.id, count(details.id) from Order ord inner join ord.orderDetails details inner join ord.customer cust where cust.companyName = 'Piccolo und mehr' group by ord.id
+    </query>
+
+    <query name="getNumberOfCategoriesNamedQuery">
+        select ord.id, count(distinct cat.id) from Order ord inner join ord.orderDetails details inner join details.product prod inner join prod.category cat inner join ord.customer cust where cust.companyName = 'Piccolo und mehr' group by ord.id
+    </query>
+
+    <query name="getNumberOfProductsBySupplierNamedQuery">
+        select sup.companyName, count(distinct cat.id), count(prod.id)  from Supplier sup inner join sup.suppliedProducts prod inner join prod.category cat group by sup.companyName
+    </query>
+
+</hibernate-mapping>

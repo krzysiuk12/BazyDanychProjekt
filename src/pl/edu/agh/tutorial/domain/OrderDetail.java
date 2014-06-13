@@ -1,5 +1,8 @@
 package pl.edu.agh.tutorial.domain;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 
 /**
@@ -38,6 +41,7 @@ public class OrderDetail {
     }
 
     @ManyToOne
+    @Fetch(FetchMode.JOIN)
     @JoinColumn(name = "productId", nullable = false)
     public Product getProduct() {
         return product;

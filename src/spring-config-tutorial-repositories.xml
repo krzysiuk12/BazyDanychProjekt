@@ -44,4 +44,19 @@
         <constructor-arg name="sessionFactory" ref="sessionFactory" />
     </bean>
 
+    <bean name="selectPerformanceTest" class="pl.edu.agh.tutorial.performanceTest.SelectPerformanceTest">
+        <constructor-arg name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <bean name="inheritancePerformanceTest" class="pl.edu.agh.tutorial.performanceTest.InheritancePerformanceTest">
+        <constructor-arg name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <bean name="fetchTypesPerformanceTest" class="pl.edu.agh.tutorial.performanceTest.FetchTypesPerformanceTest">
+        <constructor-arg name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <bean name="complexQueriesTest" class="pl.edu.agh.tutorial.performanceTest.ComplexQueriesTest">
+        <constructor-arg name="sessionFactory" ref="sessionFactory" />
+    </bean>
 </beans>

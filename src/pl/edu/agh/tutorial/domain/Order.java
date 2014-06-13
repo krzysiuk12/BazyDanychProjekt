@@ -1,5 +1,8 @@
 package pl.edu.agh.tutorial.domain;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
@@ -35,7 +38,8 @@ public class Order {
         this.id = id;
     }
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "order", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "order")
+    @Fetch(FetchMode.SUBSELECT)
     public Set<OrderDetail> getOrderDetails() {
         return orderDetails;
     }
@@ -44,6 +48,7 @@ public class Order {
     }
 
     @ManyToOne
+    @Fetch(FetchMode.JOIN)
     @JoinColumn(name = "customer", nullable = false)
     public Customer getCustomer() {
         return customer;
@@ -122,5 +127,22 @@ public class Order {
     }
     public void setShipCountry(String shipCountry) {
         this.shipCountry = shipCountry;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", orderDetails=" + orderDetails.size() +
+                ", customer=" + customer +
+                ", orderDate=" + orderDate +
+                ", requiredDate=" + requiredDate +
+                ", shippedDate=" + shippedDate +
+                ", shipAddress='" + shipAddress + '\'' +
+                ", shipCity='" + shipCity + '\'' +
+                ", shipRegion='" + shipRegion + '\'' +
+                ", shipPostalCode='" + shipPostalCode + '\'' +
+                ", shipCountry='" + shipCountry + '\'' +
+                '}';
     }
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="pl.edu.agh.tutorial.mappings.inheritance.annotations.joined">
+
+    <query name="getAllProductsFetchNamedQuery">
+        from Product as product inner join fetch product.category inner join fetch product.supplier
+    </query>
+
+    <query name="getAllProductsNoFetchNamedQuery">
+        <query-param name="categoryName" type="string" />
+        from Product as product
+    </query>
+
+</hibernate-mapping>

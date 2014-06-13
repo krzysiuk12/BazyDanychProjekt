@@ -31,8 +31,8 @@
                 <value>pl.edu.agh.tutorial.mappings.associations.bidirectional.onetoone.annotations.Employee</value>
                 <value>pl.edu.agh.tutorial.mappings.associations.bidirectional.onetoone.annotations.Address</value>-->
 
-<!--                ******************************** INHERITANCE - SINGLE CLASS********************************
-                <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.singleclass.Customer</value>
+                <!--******************************** INHERITANCE - SINGLE CLASS********************************-->
+<!--                <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.singleclass.Customer</value>
                 <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.singleclass.Individual</value>
                 <value>pl.edu.agh.tutorial.mappings.inheritance.annotations.singleclass.Company</value>-->
 
@@ -85,12 +85,15 @@
                 <value>pl/edu/agh/tutorial/mappings/associations/unidirectional/onetoone/xml/Employee.hbm.xml</value>
                 <value>pl/edu/agh/tutorial/mappings/associations/unidirectional/onetoone/xml/Address.hbm.xml</value>-->
                 <value>pl/edu/agh/tutorial/queries/namedqueries/queries_example.xml</value>
+                <value>pl/edu/agh/tutorial/queries/namedqueries/inheritancePerformanceTestNamedQueries.xml</value>
+                <value>pl/edu/agh/tutorial/queries/namedqueries/selectPerformanceTestNamedQueries.xml</value>
+                <value>pl/edu/agh/tutorial/performanceTest/NamedQueries.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL82Dialect</prop>
-                <prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+                <prop key="hibernate.hbm2ddl.auto">validate</prop>
                 <prop key="hibernate.show_sql">false</prop>
                 <prop key="hibernate.format_sql">false</prop>
             </props>

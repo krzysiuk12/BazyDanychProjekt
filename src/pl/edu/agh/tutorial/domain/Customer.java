@@ -25,8 +25,8 @@ public abstract class Customer {
         this.id = id;
     }
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "addressId", nullable = false)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "addressId")
     public Address getAddress() {
         return address;
     }

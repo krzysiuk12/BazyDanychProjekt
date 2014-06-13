@@ -2,7 +2,7 @@ package pl.edu.agh.main;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import pl.edu.agh.tutorial.performanceTest.InsertPerformanceTest;
+import pl.edu.agh.tutorial.performanceTest.ComplexQueriesTest;
 
 /**
  * Created by Krzysiu on 2014-04-16.
@@ -55,14 +55,47 @@ public class TutorialTest {
         namedQueriesExamples.findAllProductsWithCategoryAnootationsNamedQuery();
         namedQueriesExamples.findAllProductsWithUnitStockBetweenAnnotationsNamedQuery();*/
 
-        InsertPerformanceTest insertPerformanceTest = (InsertPerformanceTest)context.getBean("insertPerformanceTest");
-        //insertPerformanceTest.testMaxWithoutSessionFlush();
-        //insertPerformanceTest.testMaxWithSessionFlush();
+/*        InsertPerformanceTest insertPerformanceTest = (InsertPerformanceTest)context.getBean("insertPerformanceTest");
+        insertPerformanceTest.testMaxWithoutSessionFlush();
+        insertPerformanceTest.testMaxWithSessionFlush();
         insertPerformanceTest.testMaxWithSessionFlush100();
         insertPerformanceTest.testMaxWithSessionFlush200();
         insertPerformanceTest.testMaxWithSessionFlush1000();
         insertPerformanceTest.testMaxWithSessionFlush5000();
-        insertPerformanceTest.testMaxWithSessionFlush10000();
+        insertPerformanceTest.testMaxWithSessionFlush10000();*/
+
+/*        SelectPerformanceTest selectPerformanceTest = (SelectPerformanceTest)context.getBean("selectPerformanceTest");
+        selectPerformanceTest.getAllProductsFetchWithCriteria();
+        selectPerformanceTest.getAllProductsNoFetchWithCriteria();
+        selectPerformanceTest.getAllProductsFetchWithHQL();
+        selectPerformanceTest.getAllProductsNoFetchWithHQL();
+        selectPerformanceTest.getAllProductsFetchNamedQueries();
+        selectPerformanceTest.getAllProductsNoFetchNamedQueries();*/
+
+/*        InheritancePerformanceTest inheritancePerformanceTest = (InheritancePerformanceTest)context.getBean("inheritancePerformanceTest");
+        List<Customer> customers = inheritancePerformanceTest.testInheritanceCriteria();
+        System.out.println("Customers size: " + customers.size());
+        customers = inheritancePerformanceTest.testInheritanceHQL();
+        System.out.println("Customers size: " + customers.size());
+        customers = inheritancePerformanceTest.testInheritanceNamedQueries();
+        System.out.println("Customers size: " + customers.size());*/
+
+        //FetchTypesPerformanceTest fetchTypesPerformanceTest = (FetchTypesPerformanceTest)context.getBean("fetchTypesPerformanceTest");
+        //List<Order> orders = fetchTypesPerformanceTest.getAllOrdersWithFetchSelect();
+        //System.out.println("Orders: " + orders.get(0).getOrderDetails().size());
+        //orders = fetchTypesPerformanceTest.getAllOrdersWithFetchJoin();
+        //System.out.println("Orders: " + orders.get(0).getId() + " " + orders.get(0).getOrderDetails().size());
+
+        ComplexQueriesTest complexQueriesTest = (ComplexQueriesTest)context.getBean("complexQueriesTest");
+        complexQueriesTest.getOrders();
+        complexQueriesTest.getOrdersWithCustomer();
+        complexQueriesTest.getOrdersWithCustomerName();
+        complexQueriesTest.getNumberOfOrdersHQL();
+        complexQueriesTest.getNumberOfOrdersNamedQuery();
+        complexQueriesTest.getNumberOfCategoriesHQL();
+        complexQueriesTest.getNumberOfCategoriesNamedQueries();
+        complexQueriesTest.getNumberOfProductsBySupplierHQL();
+        complexQueriesTest.getNumberOfProductsBySupplierNamedQueries();
     }
 
 }

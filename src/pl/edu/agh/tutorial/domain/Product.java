@@ -1,5 +1,8 @@
 package pl.edu.agh.tutorial.domain;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 
 /**
@@ -35,7 +38,8 @@ public class Product {
         this.id = id;
     }
 
-    @ManyToOne//(fetch = FetchType.LAZY)
+    @ManyToOne
+    @Fetch(FetchMode.JOIN)
     @JoinColumn(name = "categoryId", nullable = false)
     public Category getCategory() {
         return category;
@@ -45,6 +49,7 @@ public class Product {
     }
 
     @ManyToOne
+    @Fetch(FetchMode.JOIN)
     @JoinColumn(name = "supplierId", nullable = false)
     public Supplier getSupplier() {
         return supplier;
